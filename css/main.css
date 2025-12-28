@@ -1,0 +1,657 @@
+/* ============================================
+   MONIEKING - MAIN CSS
+   Global Styles, Variables, Typography
+   ============================================ */
+
+/* ============= CSS VARIABLES ============= */
+:root {
+    /* Primary Colors - Extract from monieking.com */
+    --primary-color: #1a73e8;
+    --primary-dark: #1557b0;
+    --primary-light: #4a90e2;
+
+    --secondary-color: #f59e0b;
+    --secondary-dark: #d97706;
+    --secondary-light: #fbbf24;
+
+    --accent-color: #10b981;
+    --accent-dark: #059669;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* Semantic Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1a73e8 0%, #4a90e2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    --gradient-accent: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+
+    /* Glass & Neumorphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --glass-backdrop: blur(10px);
+
+    --neuro-light: #ffffff;
+    --neuro-shadow-1: rgba(163, 177, 198, 0.6);
+    --neuro-shadow-2: rgba(255, 255, 255, 0.5);
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+
+    /* Font Sizes */
+    --fs-xs: 0.75rem;
+    /* 12px */
+    --fs-sm: 0.875rem;
+    /* 14px */
+    --fs-base: 1rem;
+    /* 16px */
+    --fs-lg: 1.125rem;
+    /* 18px */
+    --fs-xl: 1.25rem;
+    /* 20px */
+    --fs-2xl: 1.5rem;
+    /* 24px */
+    --fs-3xl: 1.875rem;
+    /* 30px */
+    --fs-4xl: 2.25rem;
+    /* 36px */
+    --fs-5xl: 3rem;
+    /* 48px */
+    --fs-6xl: 3.75rem;
+    /* 60px */
+    --fs-7xl: 4.5rem;
+    /* 72px */
+
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-base: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* Z-index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+
+    /* Container */
+    --container-max-width: 1280px;
+    --container-padding: 1.5rem;
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ============= RESET & BASE ============= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-regular);
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--white);
+    overflow-x: hidden;
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* ============= TYPOGRAPHY ============= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    color: var(--gray-900);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--fs-5xl);
+    font-weight: var(--fw-extrabold);
+}
+
+h2 {
+    font-size: var(--fs-4xl);
+}
+
+h3 {
+    font-size: var(--fs-3xl);
+}
+
+h4 {
+    font-size: var(--fs-2xl);
+}
+
+h5 {
+    font-size: var(--fs-xl);
+}
+
+h6 {
+    font-size: var(--fs-lg);
+}
+
+p {
+    margin-bottom: var(--space-md);
+    color: var(--gray-600);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============= UTILITIES ============= */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+}
+
+.section {
+    padding: var(--space-4xl) 0;
+}
+
+.section-sm {
+    padding: var(--space-3xl) 0;
+}
+
+.section-lg {
+    padding: 6rem 0;
+}
+
+.bg-secondary {
+    background-color: var(--gray-50);
+}
+
+.bg-gradient {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.bg-gradient h1,
+.bg-gradient h2,
+.bg-gradient h3,
+.bg-gradient p {
+    color: var(--white);
+}
+
+/* ============= BUTTONS ============= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    font-family: var(--font-primary);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    outline: none;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn--primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover {
+    box-shadow: var(--shadow-xl);
+    opacity: 0.9;
+}
+
+.btn--secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn--secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+.btn--outline {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn--outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn--outline-light {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn--outline-light:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.btn--light {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.btn--light:hover {
+    background-color: var(--gray-50);
+}
+
+.btn--large {
+    padding: 1rem 2rem;
+    font-size: var(--fs-lg);
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-sm);
+}
+
+.btn .icon {
+    font-size: 1.25em;
+    transition: transform var(--transition-base);
+}
+
+.btn:hover .icon {
+    transform: translateX(2px);
+}
+
+/* ============= CARDS ============= */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-xl);
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.neuro-card {
+    background: var(--neuro-light);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-xl);
+    box-shadow:
+        8px 8px 16px var(--neuro-shadow-1),
+        -8px -8px 16px var(--neuro-shadow-2);
+    transition: all var(--transition-base);
+}
+
+.neuro-card:hover {
+    box-shadow:
+        12px 12px 24px var(--neuro-shadow-1),
+        -12px -12px 24px var(--neuro-shadow-2);
+}
+
+/* ============= SECTION HEADERS ============= */
+.section__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-3xl);
+}
+
+.section__badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--primary-color);
+    background-color: rgba(26, 115, 232, 0.1);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+}
+
+.section__title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-md);
+}
+
+.section__description {
+    font-size: var(--fs-lg);
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============= GRADIENT TEXT ============= */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============= ICON ============= */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============= ANIMATIONS ============= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ============= FOCUS STYLES ============= */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ============= SELECTION ============= */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ============= SCROLLBAR ============= */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* ============= RESPONSIVE TYPOGRAPHY ============= */
+@media (max-width: 1024px) {
+    :root {
+        --fs-5xl: 2.5rem;
+        --fs-4xl: 2rem;
+        --fs-3xl: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --fs-5xl: 2rem;
+        --fs-4xl: 1.75rem;
+        --fs-3xl: 1.5rem;
+        --container-padding: 1rem;
+    }
+
+    .section {
+        padding: var(--space-3xl) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --fs-5xl: 1.75rem;
+        --fs-4xl: 1.5rem;
+        --fs-3xl: 1.25rem;
+    }
+}
+
+
+/* ============================================
+   MONIEKING - VISIBILITY FIX
+   Add this to your main.css or create a new file: fixes.css
+   ============================================ */
+
+/* CRITICAL FIX: Ensure all main sections are visible */
+
+
+/* Hero Section Fixes */
+
+
+
+
+
+
+
+
+
+/* Ensure all sections are visible */
+
+
+/* Fix for AOS animations that might hide content */
+[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-property: none !important;
+}
+
+/* Re-enable after testing */
+/*
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translate(0);
+}
+*/
+
+/* Dark mode compatibility 
+body.dark-mode .hero,
+body.dark-mode .partnership,
+body.dark-mode .features,
+body.dark-mode .services-overview,
+body.dark-mode .how-it-works-preview {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+} */
+
+/* Ensure container is visible 
+.container {
+    display: block !important;
+    width: 100% !important;
+    max-width: var(--container-max-width) !important;
+    margin: 0 auto !important;
+    padding: 0 var(--container-padding) !important;
+} */
+
+/* Grid fixes */
+.hero__container,
+.features__grid,
+.services-grid,
+.steps-grid {
+    width: 100% !important;
+}
+
+/* Debug: Add red borders to see sections (REMOVE AFTER TESTING) */
+/*
+.hero { border: 3px solid red !important; }
+.partnership { border: 3px solid blue !important; }
+.features { border: 3px solid green !important; }
+.services-overview { border: 3px solid orange !important; }
+.how-it-works-preview { border: 3px solid purple !important; }
+*/

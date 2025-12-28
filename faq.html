@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions about MonieKing Cooperative - Learn about our savings, loans, and services">
+    <meta name="keywords" content="MonieKing FAQ, cooperative questions, savings help, loan questions">
+    
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/faq.css">
+    <link rel="stylesheet" href="./css/dark-mode.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <title>FAQ - MonieKing | Your Questions Answered</title>
+</head>
+<body>
+    <div class="stars-container" id="starsContainer"></div>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <img src="./assets/images/logo/monieking-logo.png" alt="MonieKing Logo" class="nav__logo">
+            </div>
+            
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="services.html" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="how-it-works.html" class="nav__link">How It Works</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="faq.html" class="nav__link active">FAQ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__actions">
+                    <button class="btn btn--secondary" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon"></span>
+                    </button>
+                    <a href="how-it-works.html" class="btn btn--primary">Get Started</a>
+                </div>
+            </div>
+            
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- FAQ Hero -->
+        <section class="faq-hero section-sm">
+            <div class="container">
+                <div class="faq-hero__content" data-aos="fade-up">
+                    <h1 class="faq-hero__title">Frequently Asked Questions</h1>
+                    <p class="faq-hero__description">
+                        Find answers to common questions about MonieKing Cooperative. Can't find what you're looking for? <a href="contact.html">Contact us</a>
+                    </p>
+                    
+                    <div class="faq-search">
+                        <input type="text" id="faqSearch" class="faq-search__input" placeholder="Search questions..." aria-label="Search FAQ">
+                        <span class="faq-search__icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Content -->
+        <section class="faq-content section">
+            <div class="container">
+                <!-- General Questions -->
+                <div class="faq-category" data-aos="fade-up">
+                    <h2 class="faq-category__title">General Questions</h2>
+                    
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">What is MonieKing Cooperative?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>MonieKing is a cooperative financial platform that helps Nigerians save, contribute, and access low-interest loans through a tax-efficient structure. We partner with Wema Bank to provide secure savings accounts and offer comprehensive financial services including NIN/BVN enrollment and POS aggregation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How long has MonieKing been operating?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>MonieKing was founded in 2022 and has been serving customers for over 7 years with reliable financial services. We began in Bwari, Abuja, and have grown to serve over 2,000 active members across Nigeria.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">Is MonieKing officially registered?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, MonieKing is officially registered with the Corporate Affairs Commission (CAC) Nigeria. We operate as a registered cooperative society with full legal compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Savings & Contributions -->
+                <div class="faq-category" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="faq-category__title">Savings & Contributions</h2>
+                    
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How does the contribution system work?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our contribution system is simple: You fund your wallet through your Wema Bank account, then contribute any amount from your wallet to your contribution account. Contributions are locked for 12 months from your start date, and at the end of the cycle, you receive your contributions plus annual dividends.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">What's the minimum amount I can contribute?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can start contributing with as little as ₦10. There's no fixed amount - you contribute what you can afford, whenever you want during your 12-month cycle. This "Pay As You Like" approach makes saving accessible to everyone.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">Can I withdraw my contributions before the 12-month period ends?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Contributions are locked for the full 12-month period to maintain the cooperative structure. However, if you need funds urgently, you can apply for a loan at 5% interest, which provides access to money without breaking your savings commitment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">What are dividends and how are they calculated?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dividends are shared profits paid to all members who complete their full 12-month contribution cycle. The dividend amount is determined annually by the board based on the cooperative's performance. All qualifying members receive dividends regardless of their contribution amount.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loans -->
+                <div class="faq-category" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="faq-category__title">Loans</h2>
+                    
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How can I qualify for a loan?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can qualify for a loan in two ways: (1) You've contributed an amount equal to or greater than the loan you're requesting, OR (2) You have guarantors (other members) whose combined contributions equal or exceed your loan amount. Just one guarantor is needed if their contribution is more than your loan request.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">What's the interest rate on loans?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We charge a flat 5% interest rate on all loans. This minimal rate reflects our cooperative nature - we're here to support members, not exploit them with high interest rates like traditional banks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How long do I have to repay a loan?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>The standard loan repayment period is 6 months. If you repay within this period, you only pay the 5% interest. If you default, your guarantors' contributions are used to repay the loan plus the 5% interest.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How do I find guarantors?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>All members are added to our WhatsApp community where you can connect with other contributors and find guarantors. You can also use guarantors you know personally. This system builds trust and strengthens our cooperative community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account & Technical -->
+                <div class="faq-category" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="faq-category__title">Account & Technical</h2>
+                    
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">How do I create an account?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Contact us with your phone number, email address, and full name. You'll receive a welcome email with download links for the CoopHub app and a default password. After downloading, login, change your password, complete KYC verification, and receive your Wema Bank account number to start using our services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">What's the difference between my Wallet and Contribution Account?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Your Wallet is like a regular bank account - you can deposit, withdraw, and transfer money freely. Your Contribution Account is where you lock funds for 12 months to earn dividends. Money must be in your wallet first before moving to contributions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">Are there any fees for using MonieKing services?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>There are no fees for joining MonieKing or funding your wallet. When you transfer money from your wallet to external bank accounts after liquidation, standard bank transfer charges apply. NIN and BVN enrollment services have varying fees - contact us for current pricing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="faq-question__text">Is the CoopHub app available for iPhone?</span>
+                                <span class="faq-question__icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Currently, CoopHub is available on Google Play Store for Android devices. The iOS version for Apple App Store is coming soon. We'll announce when it's ready through our communication channels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Still Have Questions CTA -->
+        <section class="faq-cta section bg-gradient">
+            <div class="container">
+                <div class="faq-cta__content" data-aos="zoom-in">
+                    <h2 class="faq-cta__title">Still Have Questions?</h2>
+                    <p class="faq-cta__description">
+                        Our team is here to help you. Reach out via phone, email, or visit our office in Bwari, Abuja.
+                    </p>
+                    <div class="faq-cta__buttons">
+                        <a href="contact.html" class="btn btn--light btn--large">
+                            Contact Us
+                            <span class="icon">→</span>
+                        </a>
+                        <a href="tel:+2347031867883" class="btn btn--outline-light btn--large">
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__main container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--about">
+                    <img src="./assets/images/logo/monieking-logo.png" alt="MonieKing" class="footer__logo">
+                    <p class="footer__description">
+                        Empowering Nigerians with financial freedom through cooperative-backed savings, flexible loans, and comprehensive digital services.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <span class="icon">📘</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <span class="icon">🐦</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <span class="icon">📷</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <span class="icon">💼</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="services.html" class="footer__link">Services</a></li>
+                        <li><a href="how-it-works.html" class="footer__link">How It Works</a></li>
+                        <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html#cooperative" class="footer__link">Cooperative Savings</a></li>
+                        <li><a href="services.html#loans" class="footer__link">Low-Interest Loans</a></li>
+                        <li><a href="services.html#identity" class="footer__link">NIN & BVN Services</a></li>
+                        <li><a href="services.html#pos" class="footer__link">POS Services</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Contact Us</h4>
+                    <ul class="footer__list footer__list--contact">
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>Beside Yaro Plaza, After JAMB Office, Bwari, Abuja</span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <a href="tel:+2347031867883" class="footer__link">+234 703 186 7883</a>
+                        </li>
+                        <li>
+                            <span class="icon">📧</span>
+                            <a href="mailto:moniekingsolution@gmail.com" class="footer__link">moniekingsolution@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">🕐</span>
+                            <span>Mon - Sat: 7:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">
+                        &copy; 2025 MonieKing. All rights reserved.
+                    </p>
+                    <div class="footer__legal">
+                        <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
+                        <span class="footer__separator">|</span>
+                        <a href="terms-of-service.html" class="footer__link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/dark-mode.js"></script>
+    <script src="./js/faq.js"></script>
+    <script src="./js/analytics.js"></script>
+</body>
+</html>

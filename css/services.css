@@ -1,0 +1,498 @@
+/* ============================================
+   MONIEKING - SERVICES CSS
+   Services Page Styles
+   ============================================ */
+
+/* ============= SERVICES HERO ============= */
+.services-hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+}
+
+.services-hero__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-hero__title {
+    font-size: var(--fs-6xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+}
+
+.services-hero__description {
+    font-size: var(--fs-xl);
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ============= SERVICE DETAIL ============= */
+.service-detail__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+}
+
+.service-detail__grid--reverse {
+    direction: rtl;
+}
+
+.service-detail__grid--reverse>* {
+    direction: ltr;
+}
+
+.service-detail__image {
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+}
+
+.service-detail__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.service-detail__image:hover img {
+    transform: scale(1.05);
+}
+
+/* ============= SERVICE BADGE ============= */
+.service-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+}
+
+/* ============= SERVICE CONTENT ============= */
+.service-detail__title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.service-detail__description {
+    font-size: var(--fs-lg);
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+}
+
+/* ============= SERVICE FEATURES ============= */
+.service-features {
+    margin-bottom: var(--space-2xl);
+}
+
+.service-features h3 {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-lg);
+}
+
+.feature-item {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.feature-item:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    transform: translateX(8px);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--radius-full);
+}
+
+.feature-item h4 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-xs);
+}
+
+.feature-item p {
+    font-size: var(--fs-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============= LOAN HIGHLIGHT ============= */
+.loan-highlight {
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: var(--space-2xl);
+}
+
+.loan-highlight h4 {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.loan-highlight p {
+    font-size: var(--fs-base);
+    color: var(--gray-700);
+    margin: 0;
+    line-height: 1.7;
+}
+
+.loan-highlight strong {
+    color: var(--primary-color);
+    font-size: var(--fs-2xl);
+}
+
+/* ============= SERVICE NOTE ============= */
+.service-note {
+    background: rgba(245, 158, 11, 0.1);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--warning);
+    margin-bottom: var(--space-2xl);
+}
+
+.service-note p {
+    font-size: var(--fs-sm);
+    color: var(--gray-700);
+    margin: 0;
+}
+
+/* ============= POS PRICING ============= */
+.pos-pricing {
+    background: var(--gray-50);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.pos-pricing h4 {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-md);
+}
+
+.pricing-card {
+    background: var(--white);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card h5 {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: var(--gray-800);
+    margin-bottom: var(--space-sm);
+}
+
+.pricing-card .price {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+}
+
+.pricing-note {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--accent-color);
+    font-weight: var(--fw-medium);
+    margin-top: var(--space-xs);
+}
+
+/* ============= SERVICE CTA ============= */
+.service-cta {
+    margin-top: var(--space-2xl);
+}
+
+/* ============= ADDITIONAL SERVICES ============= */
+.additional-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+}
+
+.additional-card {
+    background: var(--white);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.additional-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.additional-card__icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    display: block;
+}
+
+.additional-card__title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+}
+
+.additional-card__description {
+    font-size: var(--fs-sm);
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============= SERVICES CTA ============= */
+.services-cta {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.services-cta__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-cta__title {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+}
+
+.services-cta__description {
+    font-size: var(--fs-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-2xl);
+}
+
+.services-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+/* ============= DARK MODE ============= */
+body.dark-mode .services-hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+body.dark-mode .services-hero__title {
+    color: var(--gray-900);
+}
+
+body.dark-mode .services-hero__description {
+    color: var(--gray-600);
+}
+
+body.dark-mode .service-detail__title {
+    color: var(--gray-900);
+}
+
+body.dark-mode .service-detail__description {
+    color: var(--gray-600);
+}
+
+body.dark-mode .service-features h3 {
+    color: var(--gray-900);
+}
+
+body.dark-mode .feature-item {
+    background: var(--gray-100);
+}
+
+body.dark-mode .feature-item:hover {
+    background: var(--gray-200);
+}
+
+body.dark-mode .feature-item h4 {
+    color: var(--gray-900);
+}
+
+body.dark-mode .feature-item p {
+    color: var(--gray-600);
+}
+
+body.dark-mode .loan-highlight {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+    border-left-color: var(--primary-light);
+}
+
+body.dark-mode .loan-highlight h4 {
+    color: var(--gray-900);
+}
+
+body.dark-mode .loan-highlight p {
+    color: var(--gray-700);
+}
+
+body.dark-mode .loan-highlight strong {
+    color: var(--primary-light);
+}
+
+body.dark-mode .service-note {
+    background: rgba(245, 158, 11, 0.2);
+}
+
+body.dark-mode .pos-pricing {
+    background: var(--gray-100);
+}
+
+body.dark-mode .pos-pricing h4 {
+    color: var(--gray-900);
+}
+
+body.dark-mode .pricing-card {
+    background: var(--gray-200);
+}
+
+body.dark-mode .pricing-card h5 {
+    color: var(--gray-900);
+}
+
+body.dark-mode .additional-card {
+    background: var(--gray-100);
+}
+
+body.dark-mode .additional-card__title {
+    color: var(--gray-900);
+}
+
+body.dark-mode .additional-card__description {
+    color: var(--gray-600);
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 1024px) {
+    .service-detail__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+    }
+
+    .service-detail__grid--reverse {
+        direction: ltr;
+    }
+
+    .additional-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .services-hero__description {
+        font-size: var(--fs-lg);
+    }
+
+    .service-detail__title {
+        font-size: var(--fs-3xl);
+    }
+
+    .service-detail__description {
+        font-size: var(--fs-base);
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-icon {
+        margin: 0 auto;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .additional-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-cta__buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .services-cta__buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-hero__title {
+        font-size: var(--fs-3xl);
+    }
+
+    .service-detail__title {
+        font-size: var(--fs-2xl);
+    }
+
+    .service-features h3 {
+        font-size: var(--fs-xl);
+    }
+
+    .feature-item h4 {
+        font-size: var(--fs-base);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}

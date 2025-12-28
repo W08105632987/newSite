@@ -1,0 +1,342 @@
+/* ============================================
+   MONIEKING - HEADER CSS
+   Navigation & Header Styles
+   ============================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #30A478 0%, #28916a 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-base);
+}
+
+.header.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ============= NAV CONTAINER ============= */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    position: relative;
+}
+
+/* ============= BRAND/LOGO ============= */
+.nav__brand {
+    display: flex;
+    align-items: center;
+    z-index: var(--z-fixed);
+}
+
+.nav__logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-base);
+}
+
+.nav__logo:hover {
+    transform: scale(1.05);
+}
+
+/* ============= NAV MENU ============= */
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    display: block;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--white);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: translateX(-50%);
+    transition: width var(--transition-base);
+}
+
+.nav__link:hover,
+.nav__link.active {
+    color: rgba(255, 255, 255, 0.8);
+    /*text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);*/
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 80%;
+}
+
+/* ============= NAV ACTIONS ============= */
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+#darkModeToggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+#darkModeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* ============= HAMBURGER MENU ============= */
+.nav__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: var(--z-fixed);
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--gray-800);
+    transition: all var(--transition-base);
+    margin: 0 auto;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: var(--gray-800);
+    transition: all var(--transition-base);
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+/* ============= HAMBURGER ANIMATION ============= */
+.nav__toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.nav__toggle.active .hamburger::before {
+    transform: rotate(45deg) translateY(0);
+}
+
+.nav__toggle.active .hamburger::after {
+    transform: rotate(-45deg) translateY(0);
+}
+
+/* ============= MOBILE MENU ============= */
+@media (max-width: 1024px) {
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1);
+        padding: 100px 2rem 2rem;
+        flex-direction: column;
+        gap: var(--space-xl);
+        transition: right var(--transition-slow);
+        overflow-y: auto;
+    }
+
+    .nav__menu.active {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav__item {
+        width: 100%;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav__link {
+        padding: var(--space-lg) 0;
+        width: 100%;
+        font-size: var(--fs-lg);
+    }
+
+    .nav__link::after {
+        display: none;
+    }
+
+    .nav__actions {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .nav__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #darkModeToggle {
+        width: 100%;
+        height: 50px;
+        border-radius: var(--radius-lg);
+    }
+}
+
+/* ============= TABLET ADJUSTMENTS ============= */
+@media (max-width: 768px) {
+    .nav {
+        height: 70px;
+    }
+
+    .nav__logo {
+        height: 40px;
+    }
+
+    .nav__menu {
+        max-width: 320px;
+        padding: 90px 1.5rem 1.5rem;
+    }
+}
+
+/* ============= MOBILE ADJUSTMENTS ============= */
+@media (max-width: 480px) {
+    .nav {
+        height: 60px;
+    }
+
+    .nav__logo {
+        height: 35px;
+    }
+
+    .nav__menu {
+        max-width: 100%;
+        padding: 80px 1rem 1rem;
+    }
+
+    .nav__toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        width: 24px;
+    }
+}
+
+/* ============= MENU OVERLAY ============= */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--z-fixed) - 1);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ============= STICKY HEADER EFFECTS ============= */
+.header.sticky {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header.sticky .nav__logo {
+    height: 45px;
+}
+
+@media (max-width: 768px) {
+    .header.sticky .nav__logo {
+        height: 35px;
+    }
+}
+
+/* ============= ACCESSIBILITY ============= */
+.nav__link:focus-visible,
+.nav__toggle:focus-visible,
+#darkModeToggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* ============= SMOOTH TRANSITIONS ============= */
+.nav__menu,
+.nav__link,
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

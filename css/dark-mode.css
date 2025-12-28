@@ -1,0 +1,481 @@
+/* ============================================
+   MONIEKING - DARK MODE CSS
+   Dark Mode Styles with Animated Stars
+   ============================================ */
+
+/* ============= DARK MODE VARIABLES ============= */
+body.dark-mode {
+    --primary-color: #4a90e2;
+    --primary-dark: #3b7dd6;
+    --primary-light: #64a8f0;
+
+    --white: #ffffff;
+    --black: #000000;
+    --gray-50: #1a1f2e;
+    --gray-100: #1f2937;
+    --gray-200: #374151;
+    --gray-300: #4b5563;
+    --gray-400: #6b7280;
+    --gray-500: #9ca3af;
+    --gray-600: #d1d5db;
+    --gray-700: #e5e7eb;
+    --gray-800: #f3f4f6;
+    --gray-900: #f9fafb;
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+
+    background-color: #0a0e1a;
+    color: var(--gray-800);
+}
+
+/* ============= STARS CONTAINER ============= */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode .stars-container {
+    opacity: 1;
+}
+
+/* ============= INDIVIDUAL STARS ============= */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+    animation-delay: var(--twinkle-delay, 0s);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.star.medium {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+.star.large {
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ============= SHOOTING STARS ============= */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff, transparent);
+    border-radius: 50%;
+    animation: shoot 3s ease-out infinite;
+    animation-delay: var(--shoot-delay, 0s);
+    opacity: 0;
+}
+
+@keyframes shoot {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(300px) translateY(300px);
+    }
+}
+
+/* ============= DARK MODE BODY & SECTIONS ============= */
+body.dark-mode .header {
+    background-color: rgba(10, 14, 26, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+body.dark-mode .hero::before {
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, transparent 70%);
+}
+
+body.dark-mode .bg-secondary {
+    background-color: #1a1f2e;
+}
+
+body.dark-mode .partnership__banner {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+body.dark-mode .partnership__text {
+    font-size: var(--fs-sm) !important;
+    color: #30A478 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-weight: var(--fw-bold) !important;
+    margin-bottom: var(--space-md) !important;
+}
+
+body.dark-mode .partnership__subtitle {
+    font-size: var(--fs-sm) !important;
+    color: black !important;
+    font-style: italic !important;
+    margin: 0 !important;
+}
+
+body.dark-mode #specific {
+    font-size: var(--fs-4xl);
+    font-weight: var(--fw-extrabold);
+    color: black !important; 
+    margin-bottom: var(--space-md);
+}
+
+body.dark-mode #specified {
+    font-size: var(--fs-lg);
+    color: black !important;    
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+body.dark-mode .hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+/* Add stars background to hero */
+body.dark-mode .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.dark-mode .hero__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* ============= DARK MODE TEXT ============= */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--gray-900);
+}
+
+body.dark-mode p {
+    color: var(--gray-600);
+}
+
+body.dark-mode .hero__title,
+body.dark-mode .section__title,
+body.dark-mode .feature-card__title,
+body.dark-mode .service-card__title,
+body.dark-mode .step-card__title,
+body.dark-mode .testimonial-card__name,
+body.dark-mode .app-download__title,
+body.dark-mode .footer__title {
+    color: var(--gray-900);
+}
+
+body.dark-mode .hero__description,
+body.dark-mode .section__description,
+body.dark-mode .feature-card__description,
+body.dark-mode .service-card__description,
+body.dark-mode .step-card__description,
+body.dark-mode .testimonial-card__text,
+body.dark-mode .app-download__description,
+body.dark-mode .stat-card__label {
+    color: var(--gray-600);
+}
+
+/* ============= DARK MODE CARDS ============= */
+body.dark-mode .glass-card {
+    background: rgba(26, 31, 46, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .service-card,
+body.dark-mode .testimonial-card {
+    background: #1a1f2e;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .floating-card {
+    background: #1a1f2e;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .floating-card p {
+    color: var(--gray-700);
+}
+
+/* ============= DARK MODE NAVIGATION ============= */
+body.dark-mode .nav__link {
+    color: var(--gray-700);
+}
+
+body.dark-mode .nav__link:hover,
+body.dark-mode .nav__link.active {
+    color: var(--primary-light);
+}
+
+body.dark-mode .hamburger,
+body.dark-mode .hamburger::before,
+body.dark-mode .hamburger::after {
+    background-color: var(--gray-800);
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: var(--gray-300);
+}
+
+/* ============= DARK MODE BADGES ============= */
+body.dark-mode .hero__badge,
+body.dark-mode .section__badge {
+    background-color: rgba(74, 144, 226, 0.2);
+    color: var(--primary-light);
+}
+
+/* ============= DARK MODE BUTTONS ============= */
+body.dark-mode .btn--outline {
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+}
+
+body.dark-mode .btn--outline:hover {
+    background-color: var(--primary-light);
+    color: #0a0e1a;
+}
+
+body.dark-mode .btn--secondary {
+    background-color: var(--secondary-color);
+}
+
+/* ============= DARK MODE FOOTER ============= */
+body.dark-mode .footer {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+body.dark-mode .footer__logo {
+    filter: brightness(0) invert(1);
+}
+
+body.dark-mode .footer__description,
+body.dark-mode .footer__link,
+body.dark-mode .footer__copyright {
+    color: var(--gray-500);
+}
+
+body.dark-mode .footer__link:hover {
+    color: var(--gray-300);
+}
+
+body.dark-mode .footer__social-link {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .footer__social-link:hover {
+    background-color: var(--primary-light);
+}
+
+/* ============= DARK MODE MOBILE MENU ============= */
+@media (max-width: 1024px) {
+    body.dark-mode .nav__menu {
+        background-color: #0a0e1a;
+        box-shadow: -4px 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    body.dark-mode .nav__item {
+        border-bottom: 1px solid var(--gray-200);
+    }
+}
+
+/* ============= DARK MODE APP DOWNLOAD ============= */
+body.dark-mode .app-download__wrapper {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+body.dark-mode .app-button {
+    background: var(--gray-100);
+    color: var(--gray-900);
+}
+
+body.dark-mode .app-button:hover {
+    background: var(--gray-200);
+}
+
+/* ============= DARK MODE PARTNERSHIP ============= */
+body.dark-mode .partnership__text,
+body.dark-mode .partnership__subtitle {
+    color: var(--gray-600);
+}
+
+body.dark-mode .partnership__separator {
+    color: var(--primary-light);
+}
+
+/* ============= DARK MODE SCROLLBAR ============= */
+body.dark-mode::-webkit-scrollbar-track {
+    background: #1a1f2e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ============= SMOOTH TRANSITIONS ============= */
+body,
+.header,
+.hero,
+.section,
+.card,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.btn,
+.nav__link {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ============= DARK MODE ICON TOGGLE ============= */
+body.dark-mode #darkModeToggle .icon::before {
+    content: '☀️';
+}
+
+body:not(.dark-mode) #darkModeToggle .icon::before {
+    content: '🌙';
+}
+
+/* ============= NEBULA BACKGROUND EFFECT ============= */
+body.dark-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============= ENSURE CONTENT IS ABOVE STARS ============= */
+body.dark-mode .header,
+body.dark-mode .main,
+body.dark-mode .footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark mode navbar override - keep original dark style */
+body.dark-mode .header {
+    background-color: rgba(10, 14, 26, 0.95);
+    background: rgba(10, 14, 26, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ============= CONSTELLATION LINES (OPTIONAL) ============= */
+.constellation-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform-origin: left center;
+    animation: fadeInOut 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+body.dark-mode .constellation-line {
+    opacity: 0.2;
+}
+
+/* ============= GLOWING STARS ============= */
+.star.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+            0 0 10px rgba(74, 144, 226, 0.3);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(74, 144, 226, 0.5),
+            0 0 40px rgba(74, 144, 226, 0.3);
+    }
+}

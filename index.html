@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MonieKing - Your Payment Gateway. Empowering Nigerians with cooperative-backed savings, flexible loans, and digital financial services.">
+    <meta name="keywords" content="cooperative savings, loans, fintech Nigeria, MonieKing, Wema Bank, tax-efficient savings">
+    <meta name="author" content="MonieKing">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MonieKing - Your Payment Gateway">
+    <meta property="og:description" content="Build financial freedom through cooperative savings and low-interest loans">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+    <meta property="og:url" content="https://www.monieking.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/dark-mode.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <title>MonieKing - Your Payment Gateway | Cooperative Savings & Loans</title>
+</head>
+<body>
+    <!-- Dark Mode Stars Background -->
+    <div class="stars-container" id="starsContainer"></div>
+    
+    <!-- Header Component -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <img src="./assets/images/logo/monieking-logo.png" alt="MonieKing Logo" class="nav__logo">
+            </div>
+            
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="services.html" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="how-it-works.html" class="nav__link">How It Works</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="faq.html" class="nav__link">FAQ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__actions">
+                    <button class="btn btn--secondary" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon"></span>
+                    </button>
+                    <a href="how-it-works.html" class="btn btn--primary">Get Started</a>
+                </div>
+            </div>
+            
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="hero__badge">🏦 Your Payment Gateway</span>
+                    <h1 class="hero__title">
+                        Build Your Financial Future with 
+                        <span class="gradient-text">MonieKing Cooperative</span>
+                    </h1>
+                    <p class="hero__description">
+                        Want to navigate Nigeria's evolving tax landscape smartly? Join our cooperative platform and access tax-efficient savings, low-interest loans (5%), and comprehensive digital financial services — all backed by Wema Bank.
+                    </p>
+                    
+                    <div class="hero__cta">
+                        <a href="how-it-works.html" class="btn btn--primary btn--large">
+                            Learn How It Works
+                            <span class="icon">→</span>
+                        </a>
+                        <a href="#features" class="btn btn--outline btn--large">
+                            Explore Services
+                            <span class="icon">↓</span>
+                        </a>
+                    </div>
+                    
+                    <div class="hero__stats">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="stat-card__number">2,000+</h3>
+                            <p class="stat-card__label">Active Members</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="stat-card__number">7+</h3>
+                            <p class="stat-card__label">Years of Trust</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="stat-card__number">5%</h3>
+                            <p class="stat-card__label">Loan Interest</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero__image-wrapper">
+                        <img src="./assets/images/hero/hero-phone.png" alt="MonieKing CoopHub App" class="hero__image" onerror="this.style.display='none'">
+                        <div class="floating-card floating-card--1" data-aos="zoom-in" data-aos-delay="500">
+                            <span class="icon">💰</span>
+                            <p>Tax-Efficient Savings</p>
+                        </div>
+                        <div class="floating-card floating-card--2" data-aos="zoom-in" data-aos-delay="700">
+                            <span class="icon">📈</span>
+                            <p>Annual Dividends</p>
+                        </div>
+                        <div class="floating-card floating-card--3" data-aos="zoom-in" data-aos-delay="900">
+                            <span class="icon">🤝</span>
+                            <p>Community Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Banner -->
+        <section class="partnership section-sm">
+            <div class="container">
+                <div class="partnership__banner" data-aos="fade-up">
+                    <p class="partnership__text">Proudly Partnered With</p>
+                    <div class="partnership__logos">
+                        <img src="./assets/images/logo/monieking-logo.png" alt="MonieKing" class="partnership__logo">
+                        <span class="partnership__separator">✕</span>
+                        <img src="./assets/images/logo/wema-logo.png" alt="Wema Bank" class="partnership__logo">
+                    </div>
+                    <p class="partnership__subtitle">The Only Cooperative Platform Partnered with a Fully Recognized Bank</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features section" id="features">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Why Choose Us</span>
+                    <h2 class="section__title" id="specific">Built for Your Financial Freedom</h2>
+                    <p class="section__description" id="specified">
+                        Navigate Nigeria's 2026+ tax reforms with confidence through our cooperative structure
+                    </p>
+                </div>
+                
+                <div class="features__grid">
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card__icon">💼</div>
+                        <h3 class="feature-card__title">Tax-Efficient Structure</h3>
+                        <p class="feature-card__description">
+                            Our cooperative model provides legal protections and exemptions under Nigerian law, helping members build wealth smartly.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card__icon">🏦</div>
+                        <h3 class="feature-card__title">Wema Bank Integration</h3>
+                        <p class="feature-card__description">
+                            Get a dedicated Wema Bank account number for seamless transactions, savings, and contributions.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card__icon">💰</div>
+                        <h3 class="feature-card__title">Low-Interest Loans (5%)</h3>
+                        <p class="feature-card__description">
+                            Access affordable loans at just 5% interest with flexible repayment over 6 months — secured by contributions or guarantors.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-card__icon">📊</div>
+                        <h3 class="feature-card__title">Annual Dividends</h3>
+                        <p class="feature-card__description">
+                            Earn dividends at the end of each 12-month contribution cycle. Your savings work for you.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-card__icon">🤝</div>
+                        <h3 class="feature-card__title">Community Guarantor System</h3>
+                        <p class="feature-card__description">
+                            Join our WhatsApp community where members support each other as loan guarantors — building trust together.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature-card__icon">🎯</div>
+                        <h3 class="feature-card__title">Flexible Contributions</h3>
+                        <p class="feature-card__description">
+                            Pay as you like! Start contributing with as little as ₦10 — no fixed amounts, just your financial goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-overview section bg-secondary">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Complete Solutions</span>
+                    <h2 class="section__title">All Your Financial Needs, One Platform</h2>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="service-card__header">
+                            <div class="service-card__icon">🏦</div>
+                            <h3 class="service-card__title">Cooperative Savings</h3>
+                        </div>
+                        <p class="service-card__description">
+                            Secure your future with our 12-month contribution plans. Earn dividends, build wealth, and protect yourself from economic pressure.
+                        </p>
+                        <a href="services.html#cooperative" class="service-card__link">
+                            Learn More <span>→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="service-card__header">
+                            <div class="service-card__icon">💳</div>
+                            <h3 class="service-card__title">Low-Interest Loans</h3>
+                        </div>
+                        <p class="service-card__description">
+                            Access quick loans at only 5% interest with 6-month repayment. Get support from community guarantors when needed.
+                        </p>
+                        <a href="services.html#loans" class="service-card__link">
+                            Learn More <span>→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="service-card__header">
+                            <div class="service-card__icon">🆔</div>
+                            <h3 class="service-card__title">NIN & BVN Services</h3>
+                        </div>
+                        <p class="service-card__description">
+                            Get help with NIN enrollment, BVN registration, and resolve identity verification issues quickly.
+                        </p>
+                        <a href="services.html#identity" class="service-card__link">
+                            Learn More <span>→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card" data-aos="flip-left" data-aos-delay="400">
+                        <div class="service-card__header">
+                            <div class="service-card__icon">🖥️</div>
+                            <h3 class="service-card__title">POS Services</h3>
+                        </div>
+                        <p class="service-card__description">
+                            Buy POS devices (Opay, Paga, Wema) with installment options. Get support for POS issues and become an agent.
+                        </p>
+                        <a href="services.html#pos" class="service-card__link">
+                            Learn More <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Preview -->
+        <section class="how-it-works-preview section">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Simple Process</span>
+                    <h2 class="section__title">Get Started in 4 Easy Steps</h2>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-card__number">01</div>
+                        <div class="step-card__content">
+                            <h3 class="step-card__title">Register</h3>
+                            <p class="step-card__description">
+                                Send us your phone number, email, and full name to get started.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-card__number">02</div>
+                        <div class="step-card__content">
+                            <h3 class="step-card__title">Download CoopHub</h3>
+                            <p class="step-card__description">
+                                Receive your welcome email with download links and default password.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card" data-aos="fade-right" data-aos-delay="300">
+                        <div class="step-card__number">03</div>
+                        <div class="step-card__content">
+                            <h3 class="step-card__title">Complete KYC</h3>
+                            <p class="step-card__description">
+                                Login, change your password, and complete verification to get your Wema account.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card" data-aos="fade-right" data-aos-delay="400">
+                        <div class="step-card__number">04</div>
+                        <div class="step-card__content">
+                            <h3 class="step-card__title">Start Contributing</h3>
+                            <p class="step-card__description">
+                                Fund your wallet and begin your journey to financial freedom.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="steps__cta" data-aos="fade-up" data-aos-delay="500">
+                    <a href="how-it-works.html" class="btn btn--primary btn--large">
+                        See Complete Process
+                        <span class="icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section bg-secondary">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Member Stories</span>
+                    <h2 class="section__title">Trusted by Thousands</h2>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-card__text">
+                            "MonieKing has been a game-changer for me. The cooperative savings helped me build an emergency fund, and when I needed a loan, the process was seamless. The 5% interest is unbeatable!"
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #1a73e8, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">C</div>
+                            <div>
+                                <h4 class="testimonial-card__name">Chidinma O.</h4>
+                                <p class="testimonial-card__role">Small Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-card__text">
+                            "I've been with MonieKing for over 3 years. They're reliable, transparent, and truly care about their members. The Wema Bank integration makes everything so convenient."
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">I</div>
+                            <div>
+                                <h4 class="testimonial-card__name">Ibrahim A.</h4>
+                                <p class="testimonial-card__role">IT Professional</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-card__text">
+                            "Finally, a financial platform that understands Nigerians! The guarantor system through WhatsApp built a real community. We support each other's growth."
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #ec4899); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">G</div>
+                            <div>
+                                <h4 class="testimonial-card__name">Grace E.</h4>
+                                <p class="testimonial-card__role">Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Download CTA -->
+        <section class="app-download section">
+            <div class="container">
+                <div class="app-download__wrapper glass-card" data-aos="fade-up">
+                    <div class="app-download__content">
+                        <h2 class="app-download__title">Ready to Take Control of Your Financial Future?</h2>
+                        <p class="app-download__description">
+                            Download the MonieKing Cooperative App (CoopHub) today and join over 2,000 members building wealth together.
+                        </p>
+                        
+                        <div class="app-download__buttons">
+                            <a href="https://play.google.com/store/apps/details?id=alat.ng.coophub" target="_blank" class="app-button" data-aos="fade-right" data-aos-delay="100">
+                                <div style="width: 32px; height: 32px; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 20px;">▶</div>
+                                <div class="app-button__text">
+                                    <span class="app-button__label">GET IT ON</span>
+                                    <span class="app-button__store">Google Play</span>
+                                </div>
+                            </a>
+                            
+                            <div class="app-button app-button--disabled">
+                                <div style="width: 32px; height: 32px; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 20px;"></div>
+                                <div class="app-button__text">
+                                    <span class="app-button__label">DOWNLOAD ON</span>
+                                    <span class="app-button__store">App Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-download__visual" data-aos="fade-left" data-aos-delay="300">
+                        <div style="width: 300px; height: 600px; background: linear-gradient(135deg, #1a73e8, #10b981); border-radius: 30px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">📱</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section bg-gradient">
+            <div class="container">
+                <div class="cta__content" data-aos="zoom-in">
+                    <h2 class="cta__title">Want to Avoid Tax Pressure? We've Got You Covered</h2>
+                    <p class="cta__description">
+                        Join Nigeria's leading cooperative platform and secure your financial future with tax-efficient savings, low-interest loans, and a supportive community.
+                    </p>
+                    <div class="cta__buttons">
+                        <a href="how-it-works.html" class="btn btn--light btn--large">
+                            Get Started Now
+                            <span class="icon">→</span>
+                        </a>
+                        <a href="contact.html" class="btn btn--outline-light btn--large">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="footer">
+        <div class="footer__main container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--about">
+                    <img src="./assets/images/logo/monieking-logo.png" alt="MonieKing" class="footer__logo">
+                    <p class="footer__description">
+                        Empowering Nigerians with financial freedom through cooperative-backed savings, flexible loans, and comprehensive digital services.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <span class="icon">📘</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <span class="icon">🐦</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <span class="icon">📷</span>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <span class="icon">💼</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="services.html" class="footer__link">Services</a></li>
+                        <li><a href="how-it-works.html" class="footer__link">How It Works</a></li>
+                        <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="services.html#cooperative" class="footer__link">Cooperative Savings</a></li>
+                        <li><a href="services.html#loans" class="footer__link">Low-Interest Loans</a></li>
+                        <li><a href="services.html#identity" class="footer__link">NIN & BVN Services</a></li>
+                        <li><a href="services.html#pos" class="footer__link">POS Services</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__title">Contact Us</h4>
+                    <ul class="footer__list footer__list--contact">
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>Beside Yaro Plaza, After JAMB Office, Bwari, Abuja</span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <a href="tel:+2347031867883" class="footer__link">+234 703 186 7883</a>
+                        </li>
+                        <li>
+                            <span class="icon">📧</span>
+                            <a href="mailto:moniekingsolution@gmail.com" class="footer__link">moniekingsolution@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">🕐</span>
+                            <span>Mon - Sat: 7:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">
+                        &copy; 2025 MonieKing. All rights reserved.
+                    </p>
+                    <div class="footer__legal">
+                        <a href="privacy-policy.html" class="footer__link">Privacy Policy</a>
+                        <span class="footer__separator">|</span>
+                        <a href="terms-of-service.html" class="footer__link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="./js/main.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/dark-mode.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/analytics.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>
