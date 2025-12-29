@@ -501,3 +501,66 @@ body.dark-mode .constellation-line {
             0 0 40px rgba(74, 144, 226, 0.3);
     }
 }
+
+/* ============= SMOOTH SCROLLING OPTIMIZATION ============= */
+
+/* Use GPU acceleration for stars */
+body.dark-mode .stars-container {
+    z-index: 0;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+body.dark-mode .star,
+body.dark-mode .shooting-star {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimize scroll performance */
+body.dark-mode {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth all transitions */
+body.dark-mode * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Optimize animations during scroll */
+@media (prefers-reduced-motion: no-preference) {
+    body.dark-mode {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Optimize star animations during scroll */
+body.dark-mode .star {
+    animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+}
+
+html[style*="--scroll-performance: optimized"] body.dark-mode .star {
+    animation-play-state: paused;
+}
+
+html[style*="--scroll-performance: optimized"] body.dark-mode .shooting-star {
+    animation-play-state: paused;
+}
+
+/* Contain stars to their layer for better performance */
+body.dark-mode .stars-container {
+    contain: layout style paint;
+    content-visibility: auto;
+}
+
+body.dark-mode .star,
+body.dark-mode .shooting-star {
+    contain: layout style paint;
+}

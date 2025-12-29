@@ -258,15 +258,24 @@ document.addEventListener("visibilitychange", () => {
 });
 
 // Pause animations when user scrolls (optional, for performance)
+// Pause animations when user scrolls for better performance
 let scrollTimeout;
+let isScrolling = false;
+
 window.addEventListener(
   "scroll",
   () => {
-    clearTimeout(scrollTimeout);
+    if (!isScrolling) {
+      isScrolling = true;
+      // Reduce animation complexity during scroll
+      document.documentElement.style.setProperty('--scroll-performance', 'optimized');
+    }
 
+    clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-      // Animation continues after scroll stops
-    }, 100);
+      isScrolling = false;
+      document.documentElement.style.setProperty('--scroll-performance', 'normal');
+    }, 150);
   },
   { passive: true }
 );
