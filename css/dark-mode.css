@@ -30,6 +30,8 @@ body.dark-mode {
     color: var(--gray-800);
 }
 
+
+
 /* ============= STARS CONTAINER ============= */
 .stars-container {
     position: fixed;
@@ -110,9 +112,28 @@ body.dark-mode .stars-container {
 }
 
 /* ============= DARK MODE BODY & SECTIONS ============= */
+/* Dark mode navbar override - keep original dark style */
+/* Dark mode navbar override - keep original dark style */
 body.dark-mode .header {
     background-color: rgba(10, 14, 26, 0.95);
+    background: rgba(10, 14, 26, 0.95);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    transform: translateY(0);
+    z-index: var(--z-fixed) !important;
+}
+
+
+body.dark-mode .header.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    background: rgba(10, 14, 26, 0.98);
+}
+
+body.dark-mode .header.sticky {
+    position: fixed;
+    top: 0;
+    transform: translateY(0);
 }
 
 body.dark-mode .hero {
@@ -264,6 +285,7 @@ body.dark-mode .nav__link:hover,
 body.dark-mode .nav__link.active {
     color: var(--primary-light);
 }
+
 
 body.dark-mode .hamburger,
 body.dark-mode .hamburger::before,

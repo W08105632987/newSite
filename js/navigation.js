@@ -159,12 +159,16 @@ function initResponsiveNav() {
 }
 
 // ============= ACTIVE PAGE HIGHLIGHT =============
+// ============= ACTIVE PAGE HIGHLIGHT =============
 function initActivePageHighlight() {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const navLinks = document.querySelectorAll(".nav__link");
 
   navLinks.forEach((link) => {
     const linkHref = link.getAttribute("href");
+    
+    // Skip hash links (they're for scrolling, not page navigation)
+    if (linkHref.startsWith("#")) return;
 
     // Check if link matches current page
     if (
@@ -173,37 +177,42 @@ function initActivePageHighlight() {
       (currentPage === "/" && linkHref === "index.html")
     ) {
       link.classList.add("active");
+      link.setAttribute("data-page-active", "true"); // Mark as page-active
     } else {
       link.classList.remove("active");
+      link.removeAttribute("data-page-active");
     }
   });
 }
 
 // ============= STICKY NAVIGATION =============
+// ============= STICKY NAVIGATION =============
 function initStickyNav() {
   const header = document.getElementById("header");
+  if (!header) return;
+  
   let lastScrollTop = 0;
-  const scrollThreshold = 100;
+  const scrollThreshold = 50;
 
   window.addEventListener("scroll", () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    // Always keep header visible and sticky
     if (scrollTop > scrollThreshold) {
-      header.classList.add("sticky");
-
-      // Hide header on scroll down, show on scroll up
-      if (scrollTop > lastScrollTop && scrollTop > 200) {
-        header.style.transform = "translateY(-100%)";
-      } else {
-        header.style.transform = "translateY(0)";
-      }
+      header.classList.add("sticky", "scrolled");
     } else {
-      header.classList.remove("sticky");
-      header.style.transform = "translateY(0)";
+      header.classList.remove("scrolled");
     }
 
+    // Optional: Hide on scroll down, show on scroll up (remove if you want always visible)
+    // if (scrollTop > lastScrollTop && scrollTop > 200) {
+    //   header.style.transform = "translateY(-100%)";
+    // } else {
+    //   header.style.transform = "translateY(0)";
+    // }
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
+  }, { passive: true });
 }
 
 // Initialize sticky navigation

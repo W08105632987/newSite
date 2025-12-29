@@ -90,14 +90,20 @@ function initScrollSpy() {
     });
 
     navLinks.forEach((link) => {
-      link.classList.remove("active");
       const href = link.getAttribute("href");
-
-      if (
-        href === `#${currentSection}` ||
-        (href === "index.html" && window.pageYOffset < 100)
-      ) {
-        link.classList.add("active");
+      
+      // Skip if this link has page-active attribute (it's for the current page)
+      if (link.hasAttribute("data-page-active")) {
+        return; // Don't remove active class from page links
+      }
+      
+      // Only manage active state for hash links
+      if (href.startsWith("#")) {
+        link.classList.remove("active");
+        
+        if (href === `#${currentSection}`) {
+          link.classList.add("active");
+        }
       }
     });
   }

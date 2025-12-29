@@ -8,17 +8,17 @@
 }
 
 /* ============= HERO SECTION ============= */
-.hero {
+/*.hero {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
-}
+}*/
 
 /* Add stars background to hero */
-.hero::before {
+/*.hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -31,7 +31,7 @@
         radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
-}
+}*/
 
 .hero__container {
     display: grid;
