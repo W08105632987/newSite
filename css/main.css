@@ -298,6 +298,7 @@ img {
 .btn--primary:hover {
     box-shadow: var(--shadow-xl);
     opacity: 0.9;
+    color: white;
 }
 
 .btn--secondary {
@@ -646,6 +647,7 @@ body.dark-mode .how-it-works-preview {
 .steps-grid {
     width: 100% !important;
 }
+
 
 /* Debug: Add red borders to see sections (REMOVE AFTER TESTING) */
 /*
