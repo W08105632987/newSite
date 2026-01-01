@@ -1,7 +1,4 @@
-/* ============================================
-   MONIEKING - DARK MODE JS
-   Dark Mode Toggle with Animated Stars
-   ============================================ */
+
 
 // ============= DARK MODE STATE =============
 const darkModeState = {

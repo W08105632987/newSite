@@ -3,6 +3,9 @@
    Global Styles, Variables, Typography
    ============================================ */
 
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
 /* ============= CSS VARIABLES ============= */
 :root {
     /* Primary Colors - Extract from monieking.com */
@@ -133,8 +136,6 @@
     --container-padding: 1.5rem;
 }
 
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* ============= RESET & BASE ============= */
 *,
@@ -644,7 +645,11 @@ body.dark-mode .how-it-works-preview {
 .hero__container,
 .features__grid,
 .services-grid,
-.steps-grid {
+.steps-grid 
+body.dark-mode .hero__container,
+body.dark-mode .features__grid,
+body.dark-mode .services-grid,
+body.dark-mode .steps-grid {
     width: 100% !important;
 }
 

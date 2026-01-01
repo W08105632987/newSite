@@ -59,7 +59,10 @@
 .nav__menu {
     display: flex;
     align-items: center;
-    gap: var(--space-2xl);
+    /*gap: var(--space-2xl);*/
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 32px);
 }
 
 .nav__list {
@@ -77,13 +80,17 @@
 
 .nav__link {
     display: block;
-    padding: var(--space-xs) var(--space-md);
+    /*padding: var(--space-xs) var(--space-md);*/
     font-size: var(--fs-base);
+    font-size: clamp(10px, 1.2vw, 14px);
     font-weight: var(--fw-medium);
     color: var(--white);
     text-decoration: none;
     transition: all var(--transition-base);
     position: relative;
+    padding: 0.5em 0.75em;
+        /* scales naturally with font */
+        white-space: nowrap;
 }
 
 .nav__link::after {

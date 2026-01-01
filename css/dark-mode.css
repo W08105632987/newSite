@@ -370,7 +370,6 @@ body.dark-mode .app-download__wrapper {
 }
 
 body.dark-mode .app-button {
-    background: var(--gray-100);
     color: var(--gray-900);
 }
 
@@ -565,3 +564,9 @@ body.dark-mode .star,
 body.dark-mode .shooting-star {
     contain: layout style paint;
 }
+
+/* ============================================
+   MONIEKING - HOME CSS
+   Homepage Specific Styles
+   ============================================ */
+
