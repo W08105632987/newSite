@@ -496,6 +496,14 @@ body.dark-mode .stats-showcase {
         font-size: var(--fs-lg);
     }
 
+        .about-hero__content {
+            padding-top: 3rem;
+        }
+    
+        body.dark-mode .about-hero__content {
+            padding-top: 3rem;
+        }
+
     .story-timeline::before {
         left: 20px;
     }
@@ -535,6 +543,14 @@ body.dark-mode .stats-showcase {
 @media (max-width: 480px) {
     .about-hero__title {
         font-size: var(--fs-3xl);
+    }
+
+    .about-hero__content {
+        padding-top: 3rem;
+    }
+
+    body.dark-mode .about-hero__content {
+        padding-top: 3rem;
     }
 
     .mission-card,

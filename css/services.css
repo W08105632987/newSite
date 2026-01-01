@@ -441,6 +441,14 @@ body.dark-mode .additional-card__description {
         font-size: var(--fs-lg);
     }
 
+        .services-hero__content {
+            padding: 2rem;
+        }
+    
+        body.dark-mode .services-hero__content {
+            padding: 2rem;
+        }
+
     .service-detail__title {
         font-size: var(--fs-3xl);
     }
@@ -480,6 +488,14 @@ body.dark-mode .additional-card__description {
     .services-hero__title {
         font-size: var(--fs-3xl);
     }
+
+    .services-hero__content {
+        padding: 2rem;
+    }
+
+    body.dark-mode .services-hero__content {
+             padding: 2rem;
+            }
 
     .service-detail__title {
         font-size: var(--fs-2xl);

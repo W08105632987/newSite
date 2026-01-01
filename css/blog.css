@@ -377,6 +377,14 @@ body.dark-mode .newsletter-note {
         font-size: var(--fs-4xl);
     }
 
+    .coming-soon__content {
+        padding-top: 3rem;
+    }
+
+        body.dark-mode .coming-soon__content {
+            padding-top: 3rem;
+        }
+
     .coming-soon__description {
         font-size: var(--fs-lg);
     }
@@ -438,5 +446,13 @@ body.dark-mode .newsletter-note {
 
     .newsletter-signup {
         padding: var(--space-xl);
+    }
+
+    .coming-soon__content {
+        padding-top: 3rem;
+    }
+
+    body.dark-mode .coming-soon__content {
+        padding-top: 3rem;
     }
 }

@@ -285,6 +285,10 @@ body.dark-mode .contact-hero__title {
     color: var(--gray-900);
 }
 
+body.dark-mode .contact-hero__content {
+        padding-top: 3rem;
+    }
+
 body.dark-mode .contact-hero__description {
     color: var(--gray-600);
 }
@@ -386,6 +390,14 @@ body.dark-mode .map-directions {
         font-size: var(--fs-lg);
     }
 
+    .contact-hero__content {
+            padding-top: 3rem;
+    }
+
+    body.dark-mode .contact-hero__content {
+             padding-top: 3rem;
+         }
+
     .contact-form-card {
         padding: var(--space-2xl);
     }
@@ -422,4 +434,12 @@ body.dark-mode .map-directions {
         align-items: center;
         text-align: center;
     }
+
+    .contact-hero__content {
+        padding-top: 3rem;
+    }
+
+    body.dark-mode .contact-hero__content {
+             padding-top: 3rem;
+         }
 }

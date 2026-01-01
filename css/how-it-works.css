@@ -642,6 +642,14 @@ body.dark-mode .mini-step__text {
         font-size: var(--fs-lg);
     }
 
+    .hiw-hero__content {
+            padding-top: 3rem;
+        }
+    
+    body.dark-mode .hiw-hero__content {
+            padding-top: 3rem;
+        }
+
     .process-step__number {
         width: 60px;
         height: 60px;
@@ -689,6 +697,14 @@ body.dark-mode .mini-step__text {
     .hiw-hero__title {
         font-size: var(--fs-3xl);
     }
+
+    .hiw-hero__content {
+        padding-top: 3rem;
+    }
+
+    body.dark-mode .hiw-hero__content {
+            padding-top: 3rem;
+        }
 
     .process-step__number {
         width: 50px;

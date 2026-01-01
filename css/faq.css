@@ -363,6 +363,18 @@ body.dark-mode .faq-answer ul li {
         font-size: var(--fs-base);
     }
 
+    .faq-hero__content {
+        padding-top: 3rem;
+    }
+
+         body.dark-mode .faq-hero__content {
+             padding-top: 3rem;
+         }
+
+    body.dark-mode .faq-hero__content {
+        padding-top: 3rem;
+    }
+
     .faq-category__title {
         font-size: var(--fs-2xl);
     }
@@ -411,6 +423,14 @@ body.dark-mode .faq-answer ul li {
 @media (max-width: 480px) {
     .faq-hero__title {
         font-size: var(--fs-3xl);
+    }
+
+    .faq-hero__content {
+        padding-top: 3rem;
+    }
+
+    body.dark-mode .faq-hero__content {
+    padding-top: 3rem;
     }
 
     .faq-search__input {
