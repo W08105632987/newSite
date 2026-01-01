@@ -299,8 +299,7 @@ function animateCounter(element, start, end, duration) {
   window.requestAnimationFrame(step);
 }
 
-const observeCounters = () => {
-  const counters = document.querySelectorAll(".stat-card__number");
+
 
   if ("IntersectionObserver" in window && counters.length > 0) {
     const counterObserver = new IntersectionObserver(
@@ -327,7 +326,7 @@ const observeCounters = () => {
 
     counters.forEach((counter) => counterObserver.observe(counter));
   }
-};
+
 
 document.addEventListener("DOMContentLoaded", observeCounters);
 

@@ -115,15 +115,16 @@ body.dark-mode .stars-container {
 /* Dark mode navbar override - keep original dark style */
 /* Dark mode navbar override - keep original dark style */
 body.dark-mode .header {
-    background-color: rgba(10, 14, 26, 0.95);
-    background: rgba(10, 14, 26, 0.95);
+    background: rgba(10, 14, 26, 0.98) !important;
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    transform: translateY(0);
-    z-index: var(--z-fixed) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    transform: translateY(0) !important;
+    z-index: 9999 !important;
 }
-
 
 body.dark-mode .header.scrolled {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);

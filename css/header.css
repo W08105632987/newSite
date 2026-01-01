@@ -73,6 +73,8 @@
     position: relative;
 }
 
+
+
 .nav__link {
     display: block;
     padding: var(--space-xs) var(--space-md);
@@ -153,7 +155,7 @@
     display: block;
     width: 28px;
     height: 2px;
-    background-color: var(--gray-800);
+    background-color: #1f2937;
     transition: all var(--transition-base);
     margin: 0 auto;
 }
@@ -164,8 +166,14 @@
     position: absolute;
     width: 28px;
     height: 2px;
-    background-color: var(--gray-800);
+    background-color: #1f2937;
     transition: all var(--transition-base);
+}
+
+body.dark-mode .hamburger,
+body.dark-mode .hamburger::before,
+body.dark-mode .hamburger::after {
+    background-color: #f3f4f6;  /* Light gray for dark mode */
 }
 
 .hamburger::before {

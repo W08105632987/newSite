@@ -40,6 +40,46 @@
 
 /* ============= TABLET LANDSCAPE (1024px) ============= */
 @media (max-width: 1024px) {
+
+    /* Navigation links visibility fix */
+    .nav__list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav__item {
+        width: 100%;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    body.dark-mode .nav__item {
+        border-bottom-color: #374151;
+    }
+
+    .nav__link {
+        padding: 1.25rem 0;
+        width: 100%;
+        font-size: 1.125rem;
+        color: #1f2937 !important;
+    }
+
+    body.dark-mode .nav__link {
+        color: #f3f4f6 !important;
+    }
+
+    .nav__link:hover,
+    .nav__link.active {
+        color: #1a73e8 !important;
+    }
+
+    body.dark-mode .nav__link:hover,
+    body.dark-mode .nav__link.active {
+        color: #4a90e2 !important;
+    }
+}
+
+@media (max-width: 1024px) {
     :root {
         --space-4xl: 4rem;
         --space-3xl: 3rem;
@@ -177,19 +217,25 @@
         font-size: var(--fs-base);
     }
 
+    /* ✅ HERO CTA - Keep side by side on tablet */
     .hero__cta {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
     }
 
     .hero__cta .btn {
-        width: 100%;
+        flex: 1;
+        max-width: 250px;
     }
 
+    /* ✅ HERO STATS - Keep side by side */
     .hero__stats {
-        flex-direction: column;
-        gap: var(--space-lg);
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .stat-card {
@@ -258,7 +304,7 @@
         padding: var(--space-xl);
     }
 
-    /* App Download */
+    /* ✅ APP DOWNLOAD - Keep buttons side by side */
     .app-download__wrapper {
         padding: var(--space-2xl);
     }
@@ -272,12 +318,14 @@
     }
 
     .app-download__buttons {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
     }
 
     .app-button {
-        width: 100%;
+        flex: 1;
+        max-width: 200px;
     }
 
     /* CTA */
@@ -344,6 +392,49 @@
         padding: 0.875rem 1.5rem;
         font-size: var(--fs-base);
     }
+
+    /* ✅ HERO STATS - Keep 3 columns side by side */
+    .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .stat-card {
+        padding: 0.875rem;
+    }
+
+    .stat-card__number {
+        font-size: 1.5rem;
+    }
+
+    .stat-card__label {
+        font-size: 0.625rem;
+    }
+
+    /* ✅ HERO CTA - Keep side by side */
+    .hero__cta {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .hero__cta .btn {
+        flex: 1;
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+
+    /* ✅ APP DOWNLOAD - Keep buttons side by side */
+    .app-download__buttons {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .app-button {
+        flex: 1;
+    }
 }
 
 /* ============= MOBILE PORTRAIT (480px - 639px) ============= */
@@ -397,17 +488,36 @@
         padding: 0.375rem 0.75rem;
     }
 
+    /* ✅ HERO CTA - Keep side by side on mobile */
+    .hero__cta {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
     .hero__cta .btn {
-        padding: 0.75rem 1.25rem;
-        font-size: var(--fs-sm);
+        flex: 1;
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    /* ✅ HERO STATS - Keep 3 columns side by side */
+    .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+
+    .stat-card {
+        padding: 0.75rem 0.5rem;
     }
 
     .stat-card__number {
-        font-size: var(--fs-2xl);
+        font-size: 1.25rem;
     }
 
     .stat-card__label {
-        font-size: var(--fs-xs);
+        font-size: 0.625rem;
     }
 
     .floating-card {
@@ -515,7 +625,7 @@
         font-size: var(--fs-xs);
     }
 
-    /* App Download */
+    /* ✅ APP DOWNLOAD - Keep buttons side by side */
     .app-download__wrapper {
         padding: var(--space-xl);
     }
@@ -528,8 +638,14 @@
         font-size: var(--fs-sm);
     }
 
+    .app-download__buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
     .app-button {
-        padding: var(--space-sm) var(--space-md);
+        flex: 1;
+        padding: var(--space-sm) var(--space-xs);
     }
 
     .app-button__icon {
@@ -601,6 +717,48 @@
     .btn {
         padding: 0.625rem 1rem;
         font-size: var(--fs-sm);
+    }
+
+    /* ✅ HERO CTA - Keep side by side even on tiny screens */
+    .hero__cta {
+        flex-direction: row;
+        gap: 0.375rem;
+    }
+
+    .hero__cta .btn {
+        flex: 1;
+        padding: 0.625rem 0.375rem;
+        font-size: 0.6875rem;
+    }
+
+    /* ✅ HERO STATS - Keep 3 columns side by side */
+    .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.375rem;
+    }
+
+    .stat-card {
+        padding: 0.625rem 0.375rem;
+    }
+
+    .stat-card__number {
+        font-size: 1rem;
+    }
+
+    .stat-card__label {
+        font-size: 0.5rem;
+        line-height: 1.2;
+    }
+
+    /* ✅ APP DOWNLOAD - Keep side by side */
+    .app-download__buttons {
+        flex-direction: row;
+        gap: 0.375rem;
+    }
+
+    .app-button {
+        flex: 1;
     }
 
     .app-button__store {
