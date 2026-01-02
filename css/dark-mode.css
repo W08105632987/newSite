@@ -137,13 +137,323 @@ body.dark-mode .header.sticky {
     transform: translateY(0);
 }
 
+/*body.dark-mode .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+/* ============================================
+   DARK MODE HERO SECTION FIX - MOBILE VIEW
+   Add this to your dark-mode.css file
+   ============================================ */
+
+/* Default dark mode hero (desktop) */
+/* ============================================
+   DARK MODE HERO SECTION - DESKTOP & MOBILE
+   Add this to the END of dark-mode.css
+   ============================================ */
+
+/* ============= DESKTOP HERO ============= */
 body.dark-mode .hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
 }
 
 body.dark-mode .hero::before {
-    background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, transparent 70%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
+
+body.dark-mode .hero__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* ============= TABLET LANDSCAPE (1024px) ============= */
+@media (max-width: 1024px) {
+    body.dark-mode .hero {
+        min-height: auto;
+        padding: var(--space-4xl) 0;
+    }
+
+    body.dark-mode .hero__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    body.dark-mode .hero__visual {
+        order: -1;
+        margin-bottom: var(--space-2xl);
+    }
+
+    body.dark-mode .hero__content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    body.dark-mode .hero__cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body.dark-mode .hero__stats {
+        justify-content: center;
+    }
+
+    body.dark-mode .hero__image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ============= TABLET PORTRAIT (768px - 1023px) ============= */
+@media (max-width: 768px) {
+    body.dark-mode .hero {
+        padding: var(--space-3xl) 0;
+    }
+
+    body.dark-mode .hero__title {
+        font-size: var(--fs-4xl);
+    }
+
+    body.dark-mode .hero__description {
+        font-size: var(--fs-base);
+    }
+
+    body.dark-mode .hero__cta {
+        flex-direction: column;
+        
+    }
+
+    body.dark-mode .hero__cta .btn {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    body.dark-mode .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    body.dark-mode .stat-card {
+        text-align: center;
+    }
+}
+
+/* ============= MOBILE LANDSCAPE (640px - 767px) ============= */
+@media (max-width: 640px) {
+    body.dark-mode .hero__title {
+        font-size: var(--fs-3xl);
+    }
+
+    body.dark-mode .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    body.dark-mode .stat-card {
+        padding: 0.875rem;
+    }
+
+    body.dark-mode .stat-card__number {
+        font-size: 1.5rem;
+    }
+
+    body.dark-mode .stat-card__label {
+        font-size: 0.625rem;
+    }
+
+    body.dark-mode .hero__cta {
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    body.dark-mode .hero__cta .btn {
+        flex: 1;
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ============= MOBILE PORTRAIT (480px - 639px) ============= */
+@media (max-width: 480px) {
+    body.dark-mode .hero {
+        padding: var(--space-2xl) 0;
+    }
+
+    body.dark-mode .hero::before {
+        width: 400px;
+        height: 400px;
+    }
+
+    body.dark-mode .hero__title {
+        font-size: var(--fs-3xl);
+        line-height: 1.2;
+    }
+
+    body.dark-mode .hero__description {
+        font-size: var(--fs-sm);
+    }
+
+    body.dark-mode .hero__badge {
+        font-size: var(--fs-xs);
+        padding: 0.375rem 0.75rem;
+    }
+
+    body.dark-mode .hero__cta {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    body.dark-mode .hero__cta .btn {
+        flex: 1;
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    body.dark-mode .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+
+    body.dark-mode .stat-card {
+        padding: 0.75rem 0.5rem;
+    }
+
+    body.dark-mode .stat-card__number {
+        font-size: 1.25rem;
+    }
+
+    body.dark-mode .stat-card__label {
+        font-size: 0.625rem;
+    }
+
+    body.dark-mode .floating-card {
+        display: none;
+    }
+}
+
+/* ============= EXTRA SMALL MOBILE (320px - 479px) ============= */
+@media (max-width: 360px) {
+    body.dark-mode .hero__title {
+        font-size: var(--fs-2xl);
+    }
+
+    body.dark-mode .hero__cta {
+        flex-direction: row;
+        gap: 0.375rem;
+    }
+
+    body.dark-mode .hero__cta .btn {
+        flex: 1;
+        padding: 0.625rem 0.375rem;
+        font-size: 0.6875rem;
+    }
+
+    body.dark-mode .hero__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.375rem;
+    }
+
+    body.dark-mode .stat-card {
+        padding: 0.625rem 0.375rem;
+    }
+
+    body.dark-mode .stat-card__number {
+        font-size: 1rem;
+    }
+
+    body.dark-mode .stat-card__label {
+        font-size: 0.5rem;
+        line-height: 1.2;
+    }
+}
+
+/* ============= LANDSCAPE ORIENTATION ============= */
+@media (max-height: 500px) and (orientation: landscape) {
+    body.dark-mode .hero {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+
+    body.dark-mode .hero__image-wrapper {
+        max-width: 250px;
+    }
+}
+
+/* ============= MOBILE FIX - MATCH LIGHT MODE BEHAVIOR ============= */
+
+/* Tablet and below - Remove min-height constraint */
+@media (max-width: 1024px) {
+    body.dark-mode .hero {
+        min-height: auto;
+        padding: var(--space-4xl) 0;
+    }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+    body.dark-mode .hero {
+        padding: var(--space-3xl) 0;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    body.dark-mode .hero {
+        padding: var(--space-2xl) 0;
+    }
+
+    body.dark-mode .hero::before {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    body.dark-mode .hero {
+        padding: var(--space-2xl) 0;
+    }
+}
+
+/* Landscape orientation adjustment */
+@media (max-height: 500px) and (orientation: landscape) {
+    body.dark-mode .hero {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+}
+
+body.dark-mode .hero::before {
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, transparent 70%);
+} 
 
 body.dark-mode .bg-secondary {
     background-color: #1a1f2e;
@@ -193,7 +503,7 @@ body.dark-mode .hero {
 }
 
 /* Add stars background to hero */
-body.dark-mode .hero::before {
+/*body.dark-mode .hero::before {
     content: '';
     position: absolute;
     top: 0;

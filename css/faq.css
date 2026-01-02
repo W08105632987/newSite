@@ -59,7 +59,8 @@
     box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
 }
 
-.faq-search__icon {
+.faq-search__icon,
+body.dark-mode .faq-search__icon {
     position: absolute;
     right: 1.5rem;
     top: 50%;
@@ -305,7 +306,7 @@ body.dark-mode .faq-search__input:focus {
 }
 
 body.dark-mode .faq-category__title {
-    color: var(--gray-900);
+    color: var(--gray-50);
     border-bottom-color: var(--primary-light);
 }
 

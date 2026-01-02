@@ -602,6 +602,10 @@ body.dark-mode .mini-step__text {
     color: var(--gray-700);
 }
 
+body.dark-mode .spanpp {
+    color: var(--gray-50);
+}
+
 /* ============= RESPONSIVE ============= */
 @media (max-width: 1024px) {
     .process-step__content {
