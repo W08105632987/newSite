@@ -463,9 +463,9 @@ body.dark-mode .hero::before {
     }
 }
 
-body.dark-mode .hero::before {
+/*body.dark-mode .hero::before {
     background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, transparent 70%);
-} 
+} */
 
 body.dark-mode .bg-secondary {
     background-color: #1a1f2e;
@@ -505,14 +505,14 @@ body.dark-mode #specified {
     margin: 0 auto;
 }
 
-body.dark-mode .hero {
+/*body.dark-mode .hero {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
-}
+}*/
 
 /* Add stars background to hero */
 /*body.dark-mode .hero::before {
