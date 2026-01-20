@@ -48,7 +48,8 @@ body.dark-mode .hero-content {
     max-width: 700px;
 }
 
-.hero__badge {
+.hero__badge,
+body.dark-mode .hero__badge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
@@ -78,30 +79,35 @@ body.dark-mode .hero__description {
     margin-bottom: var(--space-2xl);
 }
 
-.hero__cta {
+.hero__cta,
+body.dark-mode .hero__cta {
     display: flex;
     gap: var(--space-md);
     margin-bottom: var(--space-3xl);
 }
 
 /* ============= HERO STATS ============= */
-.hero__stats {
+.hero__stats,
+body.dark-mode .hero__stats {
     display: flex;
     gap: var(--space-xl);
 }
 
-.stat-card {
+.stat-card,
+body.dark-mode .stat-card {
     flex: 1;
 }
 
-.stat-card__number {
+.stat-card__number,
+body.dark-mode .stat-card__number {
     font-size: var(--fs-3xl);
     font-weight: var(--fw-extrabold);
     color: var(--primary-color);
     margin-bottom: var(--space-xs);
 }
 
-.stat-card__label {
+.stat-card__label,
+body.dark-mode .stat-card__label {
     font-size: var(--fs-sm);
     color: var(--gray-600);
     margin: 0;
@@ -123,16 +129,14 @@ body.dark-mode .hero__image-wrapper {
     max-width: 500px;
 }
 
-.hero__image,
-body.dark-mode .hero__image {
+.hero__image {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.2));
     animation: float 6s ease-in-out infinite;
 }
 
-.floating-card,
-body.dark-mode .floating-card {
+.floating-card {
     position: absolute;
     background: var(--white);
     padding: var(--space-md);
@@ -256,6 +260,32 @@ body.dark-mode .floating-card {
 
 .feature-card:hover {
     transform: translateY(-8px);
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+    .feature-card:hover,
+    .service-card:hover,
+    .testimonial-card:hover,
+    .step-card:hover,
+    .value-card:hover,
+    .additional-card:hover,
+    .quick-action-card:hover,
+    .guide-card:hover,
+    .founder-card:hover,
+    .loan-option:hover,
+    .term-item:hover,
+    .glass-card:hover {
+        transform: none;
+        box-shadow: inherit;
+    }
+
+    /* Keep tap state for cards (optional) */
+    .feature-card:active,
+    .service-card:active {
+        transform: scale(0.98);
+    }
 }
 
 .feature-card__icon {
@@ -506,11 +536,6 @@ body.dark-mode .app-download__buttons {
     box-shadow: var(--shadow-xl);
 }
 
-.app-button--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
 
 .app-button__icon {
     width: 32px;

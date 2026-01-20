@@ -285,6 +285,29 @@ img {
     outline: none;
 }
 
+/* Disable hover and magnetic effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+    .btn:hover,
+    .btn--primary:hover,
+    .btn--secondary:hover,
+    .btn--outline:hover,
+    .btn--light:hover {
+        transform: none;
+        box-shadow: inherit;
+        opacity: 1;
+    }
+
+    /* Keep color change on tap */
+    .btn:active {
+        opacity: 0.9;
+    }
+
+    .btn .icon:hover {
+        transform: none;
+    }
+}
+
 .btn:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
@@ -577,6 +600,16 @@ img {
         --fs-4xl: 1.5rem;
         --fs-3xl: 1.25rem;
     }
+
+        ::-webkit-scrollbar {
+            width: 0.1px;
+        }
+}
+
+@media (max-width: 1000px) {
+    ::-webkit-scrollbar {
+            width: 0.1px;
+        }
 }
 
 
@@ -662,4 +695,57 @@ body.dark-mode .steps-grid {
 .services-overview { border: 3px solid orange !important; }
 .how-it-works-preview { border: 3px solid purple !important; }
 */
+
+/* ============================================
+   TOUCH DEVICE: DISABLE ALL HOVER EFFECTS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Disable all card hover effects */
+    .feature-card:hover,
+    .service-card:hover,
+    .testimonial-card:hover,
+    .step-card:hover,
+    .value-card:hover,
+    .stat-box:hover,
+    .additional-card:hover,
+    .quick-action-card:hover,
+    .guide-card:hover,
+    .founder-card:hover,
+    .loan-option:hover,
+    .term-item:hover,
+    .flow-step:hover,
+    .pricing-card:hover,
+    .faq-item:hover,
+    .timeline-content:hover,
+    .process-step__content:hover {
+        transform: none !important;
+        box-shadow: inherit !important;
+    }
+
+    /* Disable all button hover effects except color */
+    .btn:hover,
+    .btn--primary:hover,
+    .btn--secondary:hover,
+    .btn--outline:hover,
+    .btn--light:hover,
+    .app-button:hover,
+    .nav__link:hover,
+    .footer__link:hover,
+    .service-card__link:hover {
+        transform: none !important;
+        scale: 1 !important;
+    }
+
+    /* Keep active state on nav links */
+    .nav__link:hover {
+        color: rgba(255, 255, 255, 0.8);
+        /* Keep color change */
+    }
+
+    /* Keep button color change on tap */
+    .btn:active {
+        opacity: 0.9;
+    }
+}
 

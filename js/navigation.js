@@ -22,6 +22,7 @@ function initMobileMenu() {
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
   const navLinks = document.querySelectorAll(".nav__link");
+  const darkModeToggle = document.getElementById("darkModeToggle"); // ✅ ADD THIS
 
   if (!navToggle || !navMenu) return;
 
@@ -38,6 +39,15 @@ function initMobileMenu() {
       }
     });
   });
+
+  // ✅ ADD THIS - Close menu when clicking dark mode toggle on mobile
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => {
+      if (navState.isMobile && navState.isOpen) {
+        closeMenu();
+      }
+    });
+  }
 
   // Close menu on escape key
   document.addEventListener("keydown", (e) => {

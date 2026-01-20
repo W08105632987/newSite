@@ -243,15 +243,17 @@ function initCountUpAnimations() {
   const statNumbers = document.querySelectorAll(".stat-card__number");
 
   statNumbers.forEach((stat) => {
-    const target = parseInt(stat.textContent.replace(/\D/g, ""));
-    const suffix = stat.textContent.replace(/[0-9,]/g, "");
+    const text = stat.textContent;
+    const target = parseInt(text.replace(/[^0-9]/g, ""));
+    const suffix = text.includes("+") ? "+" : text.includes("%") ? "%" : "";
 
     if (!isNaN(target)) {
       ScrollTrigger.create({
         trigger: stat,
         start: "top 80%",
         onEnter: () => {
-          gsap.from(
+          gsap.to(
+            // ✅ CHANGED to "to" instead of "from"
             { value: 0 },
             {
               value: target,
@@ -261,7 +263,7 @@ function initCountUpAnimations() {
                 stat.textContent =
                   Math.floor(this.targets()[0].value).toLocaleString() + suffix;
               },
-            }
+            },
           );
         },
         once: true,
@@ -386,8 +388,12 @@ function initMagneticButtons() {
 }
 
 // Initialize magnetic buttons only on desktop
+// Initialize magnetic buttons only on desktop (non-touch devices)
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth > 768 && typeof gsap !== "undefined") {
+  // Check if device is NOT a touch device
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  
+  if (!isTouch && window.innerWidth > 768 && typeof gsap !== "undefined") {
     initMagneticButtons();
   }
 });

@@ -301,35 +301,7 @@ function animateCounter(element, start, end, duration) {
 
 
 
-  if ("IntersectionObserver" in window && counters.length > 0) {
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            const target = parseInt(counter.textContent.replace(/\D/g, ""));
-            const suffix = counter.textContent.replace(/[0-9,+]/g, "");
-
-            if (!isNaN(target)) {
-              animateCounter(counter, 0, target, 2000);
-              setTimeout(() => {
-                counter.textContent = target.toLocaleString() + suffix;
-              }, 2000);
-            }
-
-            counterObserver.unobserve(counter);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    counters.forEach((counter) => counterObserver.observe(counter));
-  }
-
-
-document.addEventListener("DOMContentLoaded", observeCounters);
-
+  
 // ============= PERFORMANCE MONITORING (FIXED) =============
 if (typeof window.performance !== "undefined" && window.performance.timing) {
   window.addEventListener("load", () => {

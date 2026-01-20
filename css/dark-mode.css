@@ -153,7 +153,7 @@ body.dark-mode .header.sticky {
    ============================================ */
 
 /* ============= DESKTOP HERO ============= */
-body.dark-mode .hero {
+/*body.dark-mode .hero {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
@@ -184,6 +184,17 @@ body.dark-mode .hero__container {
     align-items: center;
     position: relative;
     z-index: 2;
+}*/
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+}
+
+body.dark-mode .hero::before {
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
 }
 
 /* ============= TABLET LANDSCAPE (1024px) ============= */
@@ -258,6 +269,7 @@ body.dark-mode .hero__container {
     body.dark-mode .stat-card {
         text-align: center;
     }
+
 }
 
 /* ============= MOBILE LANDSCAPE (640px - 767px) ============= */
