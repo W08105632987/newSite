@@ -129,14 +129,16 @@ body.dark-mode .hero__image-wrapper {
     max-width: 500px;
 }
 
-.hero__image {
+.hero__image,
+body.dark-mode .hero__image {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.2));
     animation: float 6s ease-in-out infinite;
 }
 
-.floating-card {
+.floating-card,
+body.dark-mode .floating-card {
     position: absolute;
     background: var(--white);
     padding: var(--space-md);
@@ -148,7 +150,8 @@ body.dark-mode .hero__image-wrapper {
     animation: float 4s ease-in-out infinite;
 }
 
-.floating-card .icon {
+.floating-card .icon,
+body.dark-mode .floating-card .icon {
     font-size: 1.5rem;
 }
 
