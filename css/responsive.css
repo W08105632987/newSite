@@ -973,3 +973,54 @@
         padding: var(--space-3xl) 0;
     }
 }
+
+/* ============= LAPTOP (1025px - 1278px) ============= */
+@media (min-width: 1025px) and (max-width: 1278px) {
+
+    /* Hero - Consistent structure for light AND dark */
+    .hero,
+    body.dark-mode .hero {
+        padding: var(--space-3xl) 0;
+        min-height: calc(70vh - 50px);
+    }
+
+    .hero__container,
+    body.dark-mode .hero__container {
+        gap: var(--space-3xl);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    /* Image size - Same for both modes */
+    .hero__image-wrapper,
+    body.dark-mode .hero__image-wrapper {
+        max-width: 580px;
+    }
+
+    /* Content width - Same for both modes */
+    .hero__content,
+    body.dark-mode .hero__content {
+        max-width: 650px;
+    }
+
+    /* Typography - FORCE same sizes */
+    .hero__title,
+    body.dark-mode .hero__title {
+        font-size: var(--fs-5xl) !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero__description,
+    body.dark-mode .hero__description {
+        font-size: var(--fs-lg) !important;
+        line-height: 1.8 !important;
+    }
+
+    /* CTAs - Same spacing */
+    .hero__cta,
+    body.dark-mode .hero__cta {
+        gap: 1.5rem;
+        margin-bottom: var(--space-2xl);
+    }
+}
