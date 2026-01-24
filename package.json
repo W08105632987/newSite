@@ -1,0 +1,27 @@
+{
+  "name": "monieking-website",
+  "version": "1.0.0",
+  "description": "MonieKing - Empowering Financial Freedom",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build required for static site'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "monieking",
+    "cooperative",
+    "savings",
+    "loans",
+    "fintech",
+    "nigeria"
+  ],
+  "author": "MonieKing",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1"
+  }
+}

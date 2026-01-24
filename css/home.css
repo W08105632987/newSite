@@ -37,7 +37,8 @@
 body.dark-mode .hero__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
+    gap: clamp(2rem, 5vw, var(--space-4xl));
+    /* ✅ Responsive gap */
     align-items: center;
     position: relative;
     z-index: 2;

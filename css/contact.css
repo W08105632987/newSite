@@ -13,7 +13,7 @@
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
-    padding-top: 2rem;
+    
 }
 
 .contact-hero__title {
@@ -442,4 +442,35 @@ body.dark-mode .map-directions {
     body.dark-mode .contact-hero__content {
              padding-top: 3rem;
          }
+}
+
+/* ============= RESPONSIVE: LAPTOP (1025px - 1279px) ============= */
+@media (min-width: 1025px) and (max-width: 1278px) {
+
+    /* Quick Actions - Reduce to 2 columns at this size */
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Contact Hero - Better proportions */
+    .contact-hero__content {
+        max-width: 650px;
+    }
+
+    .contact-hero__title {
+        font-size: var(--fs-5xl);
+    }
+
+    /* Contact Grid - Better gaps */
+    .contact-grid {
+        gap: var(--space-3xl);
+    }
+
+    /* Form Card - Better padding */
+    .contact-form-card {
+        padding: var(--space-xl);
+    }
 }

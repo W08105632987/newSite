@@ -137,6 +137,7 @@
 }
 
 
+
 /* ============= RESET & BASE ============= */
 *,
 *::before,
@@ -235,6 +236,22 @@ img {
     margin: 0 auto;
     padding: 0 var(--container-padding);
     width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE CONTAINER PADDING
+   Reduces excessive padding at laptop sizes (1025-1278px)
+   ============================================ */
+
+@media (min-width: 1025px) and (max-width: 1278px) {
+    .container {
+        padding: 0 clamp(1rem, 1.2vw, 1.5rem);
+    }
+
+    /* Optional: Also reduce for dark mode if needed */
+    body.dark-mode .container {
+        padding: 0 clamp(1rem, 1.2vw, 1.5rem);
+    }
 }
 
 .section {
@@ -611,6 +628,9 @@ img {
             width: 0.1px;
         }
 }
+
+/* ============= RESPONSIVE CONTAINER PADDING ============= */
+
 
 
 /* ============================================

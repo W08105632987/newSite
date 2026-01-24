@@ -1,6 +1,6 @@
 /* ============================================
-   MONIEKING - CONTACT FORM JS
-   Contact Form Submission Handler
+   MONIEKING - CONTACT FORM JS (UPDATED)
+   Contact Form Submission Handler with Backend Integration
    ============================================ */
 
 // ============= INITIALIZATION =============
@@ -17,7 +17,7 @@ function initContactForm() {
 
   // Real-time validation
   const inputs = form.querySelectorAll(
-    ".form-input, .form-select, .form-textarea"
+    ".form-input, .form-select, .form-textarea",
   );
   inputs.forEach((input) => {
     input.addEventListener("blur", () => validateField(input));
@@ -54,27 +54,39 @@ async function handleFormSubmit(e) {
   submitBtn.innerHTML = '<span class="icon">⏳</span> Sending...';
 
   try {
-    // Simulate API call (replace with actual backend endpoint)
-    await sendContactForm(formData);
+    // Send to Netlify Function
+    const response = await fetch("/.netlify/functions/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-    // Success
-    showMessage(
-      "✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
-      "success"
-    );
-    form.reset();
+    const result = await response.json();
 
-    // Track form submission
-    if (typeof window.MonieKingAnalytics !== "undefined") {
-      window.MonieKingAnalytics.trackEvent("contact_form_submit", {
-        event_category: "Form",
-        event_label: formData.subject,
-      });
+    if (response.ok && result.success) {
+      // Success
+      showMessage(
+        "✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours. Please check your email for confirmation.",
+        "success",
+      );
+      form.reset();
+
+      // Track form submission
+      if (typeof window.MonieKingAnalytics !== "undefined") {
+        window.MonieKingAnalytics.trackEvent("contact_form_submit", {
+          event_category: "Form",
+          event_label: formData.subject,
+        });
+      }
+    } else {
+      throw new Error(result.error || "Failed to send message");
     }
   } catch (error) {
     showMessage(
-      "❌ Oops! Something went wrong. Please try again or contact us directly via phone or email.",
-      "error"
+      "❌ Oops! Something went wrong. Please try again or contact us directly via phone or WhatsApp at +234 703 186 7883.",
+      "error",
     );
     console.error("Form submission error:", error);
   } finally {
@@ -82,26 +94,6 @@ async function handleFormSubmit(e) {
     submitBtn.innerHTML =
       '<span class="submit-text">Send Message</span><span class="icon">→</span>';
   }
-}
-
-// ============= SEND CONTACT FORM =============
-async function sendContactForm(data) {
-  // Simulate API call
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Store in localStorage for now (replace with actual API)
-      const submissions = JSON.parse(
-        localStorage.getItem("contact_submissions") || "[]"
-      );
-      submissions.push(data);
-      localStorage.setItem("contact_submissions", JSON.stringify(submissions));
-
-      // Send email notification (implement with your backend)
-      // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
-
-      resolve({ success: true });
-    }, 1500);
-  });
 }
 
 // ============= VALIDATE FORM =============
@@ -228,47 +220,8 @@ function showMessage(message, type) {
   }, 10000);
 }
 
-// ============= CHARACTER COUNTER (OPTIONAL) =============
-function addCharacterCounter(textarea, maxLength = 500) {
-  const counter = document.createElement("div");
-  counter.className = "character-counter";
-  counter.style.cssText = `
-    text-align: right;
-    font-size: 0.875rem;
-    color: var(--gray-500);
-    margin-top: 0.25rem;
-  `;
-
-  textarea.parentElement.appendChild(counter);
-
-  const updateCounter = () => {
-    const remaining = maxLength - textarea.value.length;
-    counter.textContent = `${remaining} characters remaining`;
-
-    if (remaining < 50) {
-      counter.style.color = "#ef4444";
-    } else {
-      counter.style.color = "var(--gray-500)";
-    }
-  };
-
-  textarea.addEventListener("input", updateCounter);
-  textarea.setAttribute("maxlength", maxLength);
-  updateCounter();
-}
-
-// Optional: Add character counter to message field
-document.addEventListener("DOMContentLoaded", () => {
-  const messageField = document.getElementById("message");
-  if (messageField) {
-    // Uncomment to enable character counter
-    // addCharacterCounter(messageField, 500);
-  }
-});
-
 // ============= EXPORT FUNCTIONS =============
 window.MonieKingContact = {
   validateForm,
-  sendContactForm,
   showMessage,
 };

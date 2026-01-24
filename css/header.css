@@ -59,16 +59,13 @@
 .nav__menu {
     display: flex;
     align-items: center;
-    /*gap: var(--space-2xl);*/
-    display: flex;
-    align-items: center;
-    gap: clamp(16px, 2vw, 32px);
+    gap: clamp(20px, 2.5vw, 36px);
 }
 
 .nav__list {
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: clamp(18px, 1.5vw, 24px);
     list-style: none;
 }
 
@@ -76,21 +73,16 @@
     position: relative;
 }
 
-
-
 .nav__link {
     display: block;
-    /*padding: var(--space-xs) var(--space-md);*/
-    font-size: var(--fs-base);
-    font-size: clamp(10px, 1.2vw, 14px);
+    font-size: clamp(13px, 1.3vw, 14px);
     font-weight: var(--fw-medium);
     color: var(--white);
     text-decoration: none;
     transition: all var(--transition-base);
     position: relative;
     padding: 0.5em 0.75em;
-        /* scales naturally with font */
-        white-space: nowrap;
+    white-space: nowrap;
 }
 
 .nav__link::after {
@@ -108,7 +100,6 @@
 .nav__link:hover,
 .nav__link.active {
     color: rgba(255, 255, 255, 0.8);
-    /*text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);*/
 }
 
 .nav__link:hover::after,
@@ -180,7 +171,7 @@
 body.dark-mode .hamburger,
 body.dark-mode .hamburger::before,
 body.dark-mode .hamburger::after {
-    background-color: #f3f4f6;  /* Light gray for dark mode */
+    background-color: #f3f4f6;
 }
 
 .hamburger::before {
@@ -204,7 +195,80 @@ body.dark-mode .hamburger::after {
     transform: rotate(-45deg) translateY(0);
 }
 
-/* ============= MOBILE MENU ============= */
+/* ============================================
+   NAV OPTIMIZATION: LAPTOP (1025px - 1278px)
+   Maintains same visual proportion as 1279px+ desktop
+   ============================================ */
+@media (min-width: 1025px) and (max-width: 1278px) {
+
+    /* Nav container - Same layout logic as desktop */
+    .nav,
+    body.dark-mode .nav {
+        height: 75px;
+        justify-content: space-between;
+    }
+
+    /* Logo brand - Consistent behavior */
+    .nav__brand {
+        flex: 0 0 auto;
+    }
+
+    /* Logo - Proportional reduction */
+    .nav__logo,
+    body.dark-mode .nav__logo {
+        height: 45px;
+    }
+
+    /* Nav menu - Better spacing, stays right-aligned */
+    .nav__menu {
+        gap: clamp(20px, 2.2vw, 28px);
+        flex: 0 0 auto;
+        justify-content: flex-end;
+    }
+
+    /* Nav list - Optimize spacing between links */
+    .nav__list {
+        gap: clamp(14px, 1.3vw, 20px);
+    }
+
+    /* Nav links - Better font size that stays readable */
+    .nav__link,
+    body.dark-mode .nav__link {
+        font-size: clamp(13px, 1.25vw, 14px) !important;
+        padding: 0.5em 0.65em;
+        letter-spacing: -0.01em;
+    }
+
+    /* Nav actions - Tighter spacing between buttons */
+    .nav__actions {
+        gap: clamp(10px, 1vw, 14px);
+    }
+
+    /* Dark mode toggle - Slightly smaller */
+    #darkModeToggle,
+    body.dark-mode #darkModeToggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    /* Get Started button - Optimized sizing */
+    .nav__actions .btn,
+    body.dark-mode .nav__actions .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: clamp(13px, 1.2vw, 14px);
+        white-space: nowrap;
+    }
+
+    /* Hover effects - Keep same as larger screens */
+    .nav__link:hover::after,
+    .nav__link.active::after,
+    body.dark-mode .nav__link:hover::after,
+    body.dark-mode .nav__link.active::after {
+        width: 80%;
+    }
+}
+
 /* ============= MOBILE MENU ============= */
 @media (max-width: 1024px) {
     .nav__toggle {
@@ -370,46 +434,36 @@ body.dark-mode .hamburger::after {
     .nav__menu {
         padding: 70px 1.25rem 1rem;
         gap: 0.5rem;
-        /* Reduced from var(--space-xl) which is 2rem */
     }
 
     .nav__list {
         gap: 0;
-        /* Remove gap between items */
     }
 
     .nav__item {
         border-bottom: 1px solid var(--gray-200);
         padding: 0;
-        /* Remove default padding */
     }
 
     .nav__link {
         padding: 0.625rem 0;
-        /* Reduced vertical padding from var(--space-lg) */
         font-size: 0.9375rem;
-        /* Slightly smaller font: 15px */
     }
 
     .nav__actions {
         gap: 0.625rem;
-        /* Tighter gap */
         margin-top: 0.5rem;
     }
 
     .nav__actions .btn {
         padding: 0.625rem 1rem;
-        /* Smaller button padding */
         font-size: 0.875rem;
-        /* 14px font */
         height: auto;
         min-height: 44px;
-        /* Maintain touch target */
     }
 
     #darkModeToggle {
         height: 44px;
-        /* Smaller dark mode button */
         width: 100%;
     }
 }
@@ -423,15 +477,12 @@ body.dark-mode .hamburger::after {
 
     .nav__link {
         padding: 0.5rem 0;
-        /* Even tighter */
         font-size: 0.875rem;
-        /* 14px */
     }
 
     .nav__actions .btn {
         padding: 0.5rem 0.875rem;
         font-size: 0.8125rem;
-        /* 13px */
         min-height: 40px;
     }
 
@@ -439,4 +490,3 @@ body.dark-mode .hamburger::after {
         height: 40px;
     }
 }
-

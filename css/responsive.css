@@ -1024,3 +1024,30 @@
         margin-bottom: var(--space-2xl);
     }
 }
+
+/* ============= LAPTOP (1025px - 1278px) ============= */
+@media (min-width: 1025px) and (max-width: 1278px) {
+
+    /* ...your existing code... */
+
+    /* ✅ ADD THIS - Reduce hero container gap */
+    .hero__container,
+    body.dark-mode .hero__container {
+        gap: clamp(2rem, 4vw, 3rem) !important;
+        /* Smaller gap at this size */
+    }
+
+    /* ✅ ADD THIS - Reduce hero content max-width */
+    .hero__content,
+    body.dark-mode .hero__content {
+        max-width: 600px !important;
+        /* Was 700px, now smaller */
+    }
+
+    /* ✅ ADD THIS - Reduce hero image wrapper */
+    .hero__image-wrapper,
+    body.dark-mode .hero__image-wrapper {
+        max-width: 480px !important;
+        /* Was 500px, now smaller */
+    }
+}
