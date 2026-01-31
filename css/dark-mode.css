@@ -693,7 +693,6 @@ body.dark-mode .shooting-star {
     }
 }
 
-/* ============= DARK MODE: MOBILE PORTRAIT (480px) ============= */
 /* ============= DARK MODE: 481px to 520px (Floating Cards Scaled Down) ============= */
 @media (min-width: 481px) and (max-width: 520px) {
     body.dark-mode .floating-card {
