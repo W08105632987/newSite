@@ -697,9 +697,9 @@ body.dark-mode .shooting-star {
 /* ============= DARK MODE: 481px to 520px (Floating Cards Scaled Down) ============= */
 @media (min-width: 481px) and (max-width: 520px) {
     body.dark-mode .floating-card {
-        padding: 1.5rem 1.5rem;
+        padding: 1.3rem 1.3rem;
         gap: 0.25rem;
-        border-radius: 8px;
+        border-radius: var(--radius-xl);
         background: #1a1f2e;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
