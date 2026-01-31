@@ -32,7 +32,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    padding-top: 3rem;
+    padding-top: 1.8rem;
 }
 
 /* ============= ROCKET ANIMATION ============= */
@@ -357,12 +357,23 @@ body.dark-mode .newsletter-note {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
+
+    .coming-soon__animation {
+        padding-top: 5rem;
+    }
 }
+
+@media (min-width: 1025px) {
+    .coming-soon__animation {
+        padding-top: 6.5rem;
+    }
+} 
 
 @media (max-width: 768px) {
     .coming-soon__animation {
         height: 150px;
         margin-bottom: var(--space-2xl);
+        padding-top: 5rem;
     }
 
     .rocket {
@@ -378,12 +389,12 @@ body.dark-mode .newsletter-note {
     }
 
     .coming-soon__content {
-        padding-top: 3rem;
+        padding-top: 1.8rem;
     }
 
-        body.dark-mode .coming-soon__content {
-            padding-top: 3rem;
-        }
+    body.dark-mode .coming-soon__content {
+        padding-top: 1.8rem;
+    }
 
     .coming-soon__description {
         font-size: var(--fs-lg);

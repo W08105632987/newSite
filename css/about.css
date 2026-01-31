@@ -256,7 +256,7 @@
 .founder-card__title {
     font-size: var(--fs-base);
     font-weight: var(--fw-semibold);
-    color: var(--primary-color);
+    color: var(--primary-light) !important ;
     margin-bottom: var(--space-xs);
 }
 
@@ -546,11 +546,11 @@ body.dark-mode .stats-showcase {
     }
 
     .about-hero__content {
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 
     body.dark-mode .about-hero__content {
-        padding-top: 3rem;
+        padding-top: 1rem;
     }
 
     .mission-card,
@@ -569,4 +569,14 @@ body.dark-mode .stats-showcase {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 360px) {
+    .about-hero__content {
+            padding-top: .8rem;
+        }
+    
+        body.dark-mode .about-hero__content {
+            padding-top: .8rem;
+        }
 }

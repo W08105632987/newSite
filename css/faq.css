@@ -427,11 +427,11 @@ body.dark-mode .faq-answer ul li {
     }
 
     .faq-hero__content {
-        padding-top: 3rem;
+        padding-top: 1.8rem;
     }
 
     body.dark-mode .faq-hero__content {
-    padding-top: 3rem;
+    padding-top: 1.8rem;
     }
 
     .faq-search__input {

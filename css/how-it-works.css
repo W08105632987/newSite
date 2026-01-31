@@ -123,9 +123,7 @@
 }
 
 .process-step__image {
-    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
 }
 
 .process-step__image img {
@@ -139,17 +137,29 @@
     margin-top: var(--space-lg);
 }
 
+.spanpp,
+body.dark-mode .spanpp {
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
 .app-link {
     display: inline-flex;
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-md) var(--space-xl);
-    background: var(--gray-900);
+    background-color: #0a0e1a;
     color: var(--white);
     border-radius: var(--radius-lg);
     text-decoration: none;
     font-weight: var(--fw-semibold);
     transition: all var(--transition-base);
+}
+
+body.dark-mode .app-link {
+    color: var(--white) !important;
+    background-color: var(--primary-color);
 }
 
 .app-link:hover {
@@ -229,7 +239,8 @@
 /* ============= CONTRIBUTION FLOW ============= */
 .contribution-flow {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    /* ✅ Changed from 'center' to 'stretch' */
     justify-content: center;
     gap: var(--space-lg);
     margin-bottom: var(--space-3xl);
@@ -245,6 +256,21 @@
     box-shadow: var(--shadow-md);
     text-align: center;
     transition: all var(--transition-base);
+    display: flex;
+    /* ✅ ADDED */
+    flex-direction: column;
+    /* ✅ ADDED */
+    justify-content: flex-start;
+    /* ✅ ADDED - Aligns content to top */
+}
+
+/* ✅ ADDED - Equal spacing for flow content */
+.flow-content {
+    flex: 1;
+    /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .flow-step:hover {
@@ -283,6 +309,7 @@
     font-size: var(--fs-3xl);
     color: var(--primary-color);
     font-weight: var(--fw-bold);
+    padding-top: var(--space-3xl);
 }
 
 /* ============= CONTRIBUTION NOTE ============= */
@@ -312,7 +339,8 @@
 /* ============= LOANS OPTIONS ============= */
 .loans-options {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    /* ✅ Changed from 'center' to 'stretch' */
     gap: var(--space-2xl);
     margin-bottom: var(--space-3xl);
 }
@@ -324,6 +352,16 @@
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
+    display: flex;
+    /* ✅ ADDED */
+    flex-direction: column;
+    /* ✅ ADDED */
+}
+
+/* ✅ ADDED - Push example to bottom */
+.loan-option .loan-example {
+    margin-top: auto;
+    /* Pushes this to the bottom of the flex container */
 }
 
 .loan-option:hover {
@@ -376,6 +414,7 @@
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
     color: var(--gray-400);
+    align-self: center;
 }
 
 /* ============= LOAN TERMS ============= */
@@ -603,7 +642,7 @@ body.dark-mode .mini-step__text {
 }
 
 body.dark-mode .spanpp {
-    color: var(--gray-50);
+    color: var(--gray-900);
 }
 
 /* ============= RESPONSIVE ============= */
@@ -634,6 +673,10 @@ body.dark-mode .spanpp {
 
     .terms-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flow-arrow {
+        display: none;
     }
 }
 
@@ -725,3 +768,76 @@ body.dark-mode .spanpp {
         font-size: var(--fs-xl);
     }
 }
+
+@media (max-width: 480px) {
+    .hiw-hero__content {
+            padding-top: 0.8rem;
+        }
+    
+        body.dark-mode .hiw-hero__content {
+            padding-top: 0.8rem;
+        }
+}
+
+@media (max-width: 480px) {
+    .hiw-hero__title {
+        font-size: var(--fs-3xl);
+    }
+    
+    .process-step__number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--fs-xl);
+    }
+
+    .process-step__content {
+        margin-left: 60px;
+        padding: var(--space-md);
+    }
+
+    .process-step__title {
+        font-size: var(--fs-xl);
+    }
+
+    /* ✅ ADD THESE NEW RULES */
+    .app-link {
+        padding: var(--space-sm) var(--space-md);
+        gap: var(--space-sm);
+        font-size: var(--fs-sm);
+    }
+
+    .app-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ✅ ADD THIS NEW MEDIA QUERY FOR EXTRA SMALL SCREENS */
+@media (max-width: 383px) {
+    .app-link {
+        padding: 0.5rem 0.75rem;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .app-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .spanpp {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   HIDE STEP IMAGES ON SCREENS BELOW 1025px
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .process-step__image {
+        display: none !important;
+    }
+}
+

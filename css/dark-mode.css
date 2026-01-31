@@ -694,6 +694,44 @@ body.dark-mode .shooting-star {
 }
 
 /* ============= DARK MODE: MOBILE PORTRAIT (480px) ============= */
+/* ============= DARK MODE: 481px to 520px (Floating Cards Scaled Down) ============= */
+@media (min-width: 481px) and (max-width: 520px) {
+    body.dark-mode .floating-card {
+        padding: 1.5rem 1.5rem;
+        gap: 0.25rem;
+        border-radius: 8px;
+        background: #1a1f2e;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    body.dark-mode .floating-card .icon {
+        font-size: 1rem;
+    }
+
+    body.dark-mode .floating-card p {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        color: var(--gray-700);
+    }
+
+    /* Reposition cards to stay within bounds */
+    body.dark-mode .floating-card--1 {
+        top: 5%;
+        left: 0%;
+    }
+
+    body.dark-mode .floating-card--2 {
+        top: 50%;
+        right: -5%;
+    }
+
+    body.dark-mode .floating-card--3 {
+        bottom: 10%;
+        left: 2%;
+    }
+}
+
+/* ============= DARK MODE: MOBILE PORTRAIT (480px and below) ============= */
 @media (max-width: 520px) {
     body.dark-mode .hero {
         padding: var(--space-2xl) 0;
@@ -749,12 +787,14 @@ body.dark-mode .shooting-star {
     body.dark-mode .stat-card__label {
         font-size: 0.625rem;
     }
+}
 
+/* ============= DARK MODE: Hide floating cards below 480px ============= 
+@media (max-width: 480px) {
     body.dark-mode .floating-card {
         display: none;
     }
-}
-
+}*/
 /* ============= DARK MODE: EXTRA SMALL MOBILE (360px) ============= */
 @media (max-width: 360px) {
     body.dark-mode .hero__title {
